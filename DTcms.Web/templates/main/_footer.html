@@ -1,0 +1,67 @@
+﻿<!--<div class="footer clearfix">
+  <div class="foot-nav">
+    <a target="_blank" href="<%linkurl("index")%>">首 页</a>|
+    <a target="_blank" href="<%linkurl("content","about")%>">关于我们</a>|
+    <a target="_blank" href="<%linkurl("news")%>">新闻资讯</a>|
+    <a target="_blank" href="<%linkurl("goods")%>">购物商城</a>|
+    <a target="_blank" href="<%linkurl("video")%>">视频专区</a>|
+    <a target="_blank" href="<%linkurl("down")%>">资源下载</a>|
+    <a target="_blank" href="<%linkurl("photo")%>">图片分享</a>|
+    <a target="_blank" href="<%linkurl("feedback")%>">留言反馈</a>|
+    <a target="_blank" href="<%linkurl("link")%>">友情链接</a>|
+    <a target="_blank" href="<%linkurl("content","contact")%>">联系我们</a>
+  </div>
+  <div class="copyright">
+    <p>版权所有 <%=site.company%> 粤ICP备11064298号 DTcms版本号：<%=Utils.GetVersion()%></p>
+    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>
+    <p><script src="http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic" language="javascript"></script></p>
+  </div>
+</div>-->
+
+
+<!--footer begin-->
+
+<div class="footer">
+    <div class="sy_newsp">
+        <h3>省医院报</h3>
+        <select name="ddlYears" id="ddlYears" onchange="GetTimesByYear(this)">
+            <option value="0">请选择年份</option>
+            <option value="2015">2015年</option>
+            <option value="2014">2014年</option>
+        </select>
+        <select class="sty01" name="ddlTimes" id="ddlTimes">
+            <option value="0">选择期数</option>
+        </select>
+        <input class="sea_go" name="btnGoNewsPaper" id="btnGoNewsPaper" onclick="GoNewsPaper()" type="button" />
+    </div>
+    <div class="sy_ysg">
+        <dl>
+            <dt><a href="history.aspx" target="_blank"><img src="<%templateskin%>/images/pic_ysg01.jpg" width="160" height="59" alt="院史馆" title="院史馆" /></a></dt>
+            <dd>
+                <a href="history.aspx">百年省医</a>
+                <p>Hospital Historical</p>
+            </dd>
+        </dl>
+    </div>
+    <div class="sy_kslj">
+        <ul>
+            <li><a target="_blank" href="http://e.t.qq.com/hnsrmyybnly"><img src="<%templateskin%>/images/pic_weiboa.jpg" width="67" height="61" alt="省医官方微博" title="省医官方微博" /><span>省医微博<br /><em>WeiBo</em></span></a></li>
+            <li><a target="_blank" href="Telephone.aspx"><img src="<%templateskin%>/images/pic_tela.jpg" width="67" height="61" alt="电话咨询" title="电话咨询" /><span>电话咨询<br /><em>PhoneBook</em></span></a></li>
+            <li><a target="_blank" href="video.aspx"><img src="<%templateskin%>/images/pic_videoa.jpg" width="67" height="61" alt="视频" title="视频" /><span>视频<br /><em>Video</em></span></a></li>
+            <li><a target="_blank" href="DownLoad.aspx"><img src="<%templateskin%>/images/pic_downa.jpg" width="67" height="61" alt="资料下载" title="资料下载" /><span>资料下载<br /><em>DownLoad</em></span></a></li>
+        </ul>
+    </div>
+    <div class="sy_bottom">
+        <h5>主办单位：河南省人民医院  &nbsp; &nbsp;咨询电话：0371-6558 0014&nbsp;&nbsp;6558 0100(非工作时间)&nbsp; &nbsp;门诊预约挂号电话：0371-6558 0070&nbsp; &nbsp;急救中心电话：0371-6558 0120 </h5><a href="links.aspx" target="_blank" id="BaseLinks"><img src="images/yqlj_btn.gif" width="56" height="16" /></a>
+        <h6>传真：0371-65964376 &nbsp;&nbsp;地 址：河南省郑州市纬五路7号 &nbsp; &nbsp;版权所有：河南省人民医院&nbsp; &nbsp;豫ICP备11033726号-1 &nbsp; &nbsp;豫卫网审[2011]第116号<em><a href="http://www.miraclevision.net/" target="_blank">技术支持：铭成奇迹</a></em></h6>
+    </div>
+</div>
+<div id="Bottom_CountCodeDiv" style="display:none;">
+    <script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4a1d36386e8734a5fd29acec9114818d' type='text/javascript'%3E%3C/script%3E"));
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fafd2ae44e23648da4e8a81a7b1349be4' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+<!--footer end-->
+<div class="page_tr"></div>

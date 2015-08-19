@@ -1,0 +1,64 @@
+﻿<!--<div class="header">
+  <div class="header-wrap">
+    <div class="section">
+      <div class="left-box">
+        <a class="logo" href="<%linkurl("index")%>">{site.name}</a>
+        <p class="nav">
+          <a href="<%linkurl("news")%>">资讯</a>
+          <a href="<%linkurl("goods")%>">商城</a>
+          <a href="<%linkurl("video")%>">视频</a>
+          <a href="<%linkurl("photo")%>">图片</a>
+          <a href="<%linkurl("down")%>">下载</a>
+        </p>
+      </div>
+      <div class="search">
+        <input id="keywords" name="keywords" class="input" type="text" onkeydown="if(event.keyCode==13){SiteSearch('<%linkurl("search")%>', '#keywords');return false};" placeholder="输入回车搜索" x-webkit-speech="" />
+        <input class="submit" type="submit" onclick="SiteSearch('<%linkurl("search")%>', '#keywords');" value="搜索" />
+      </div>
+      <div class="right-box">
+      <script type="text/javascript">
+			$.ajax({
+				type: "POST",
+				url: "{config.webpath}tools/submit_ajax.ashx?action=user_check_login",
+				dataType: "json",
+				timeout: 20000,
+				success: function (data, textStatus) {
+					if (data.status == 1) {
+						$("#menu").prepend('<li class="line"><a href="<%linkurl("usercenter","exit")%>">退出</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="<%linkurl("usercenter","index")%>">会员中心</a></li>');
+					} else {
+						$("#menu").prepend('<li class="line"><a href="<%linkurl("register")%>">注册</a></li>');
+						$("#menu").prepend('<li class="login"><em></em><a href="<%linkurl("login")%>">登录</a></li>');
+					}
+				}
+			});
+		</script>
+        <ul id="menu">
+          <li>
+            <a href="<%linkurl("cart")%>">购物车<span id="shoppingCartCount"><script type="text/javascript" src="{config.webpath}tools/submit_ajax.ashx?action=view_cart_count"></script></span>件</a>
+          </li>
+          <li><a href="<%linkurl("content","contact")%>">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+<div class="header">
+    <h1><a href="index.aspx"><img src="<%templateskin%>/images/logo.jpg" width="301" height="62" alt="河南省人民医院官方网站" title="河南省人民医院官方网站" /></a></h1>
+    <h2>
+        <span class="sty_right"><a href="Site_Map.aspx">站点地图</a> | <a href="javascript:void(0)" onclick="addToFavorite()">加入收藏</a> | <a href="FunctionalDepartment.aspx?id=71" target="_blank">人事管理</a> |  <a href="https://61.163.73.190/por/login_psw.csp" target="_blank">内部OA</a>  </span>
+    </h2><input type="text" class="search" name="tbSearch" id="tbSearch" value="" onkeypress="if(event.keyCode==13){document.all.btnSearch.click();return false;}" /><input type="button" class="btn_search" name="btnSearch" id="btnSearch" value="搜 索" onclick="SearchWords()" />
+    <ul>
+    <li onclick="self.location = 'index.html'" style="cursor:pointer;" class='on'><a href="index.html">首页</a></li>
+    <li onclick="self.location = 'treatment.html'" style="cursor:pointer;"><a href="treatment.html">就诊指南</a></li>
+    <li onclick="self.location='survey.html'" style="cursor:pointer;"><a href="survey.html">医院概况</a></li>
+    <li onclick="self.location='scientific.aspx'" style="cursor:pointer;"><a href="scientific.aspx">科研教学</a></li>
+    <li onclick="self.location = '<%linkurl("news")%>'" style="cursor:pointer;"><a href="<%linkurl("news")%>">新闻动态</a></li>
+    <li onclick="self.location='science.aspx'" style="cursor:pointer;"><a href="science.aspx">健康科普</a></li>
+    <li onclick="self.location='nursing.aspx'" style="cursor:pointer;"><a href="nursing.aspx">护理园地</a></li>
+    <li onclick="self.location='work.aspx'" style="cursor:pointer;"><a href="work.aspx">党群工作</a></li> 
+    <li onclick="self.location='subject.aspx'" style="cursor:pointer;" class="listr"><a href="subject.aspx">专题</a></li>
+    </ul>
+</div>

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>  - {site.name}</title>
+ 
+<link href="{config.webpath}css/pagination.css" rel="stylesheet" />
+<!--<link href="<%templateskin%>/css/style.css" rel="stylesheet" type="text/css" />-->
+
+    <link href="<%templateskin%>/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="<%templateskin%>/css/second.css" rel="stylesheet" type="text/css" />
+    <link href="<%templateskin%>/css/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" charset="utf-8" src="{config.webpath}scripts/jquery/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/common.js"></script>
+    <script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="<%templateskin%>/js/imgReady.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <!--Header-->
+        <%template src="_header.html"%>
+        <!--/Header-->
+        <!--content begin-->
+        <div class="content survey_cont">
+            <div class="left">
+                <div class="survey_left">
+                    <ul>
+                        <!--<li><span>Introduction</span><a href="survey.html">医院简介</a></li>
+                        <li><span>Course</span><a href="course.aspx">医院沿革</a></li>
+                        <li><span>Honor</span><a href="honor.aspx">荣誉称号</a></li>
+                        <li><span>Culture</span><a href="culture.aspx">医院文化</a></li>
+                        <li><span>Newspaper</span><a href="NewsPaper.aspx">院报</a></li>
+                        <li ><span>Architecture</span><a href="architecture.aspx">组织结构</a></li>-->
+                        
+                        <%set DataTable categoryList1=get_category_child_list(channel, 0)%>
+                        <%foreach(DataRow cdr1 in categoryList1.Rows)%>
+                        <%if({strtoint({cdr1[id]})}=={category_id})%>
+                        <li class="on">
+                        <%else%>
+                        <li> 
+                        <%/if%>
+                            <span>{cdr1[content]}</span>
+                            <a href="<%linkurl("survey",{cdr1[id]})%>">
+                            	
+                            	{cdr1[title]}</a>
+                        </li>
+                        <%/foreach%>
+                    </ul>
+                </div>
+                <div class="hospital_link link_sur"></div>
+            </div>
+            <div class="right survey_right">
+                <div class="survey_main sur_wh">
+                    <h3 id="h3_dateTitle"><span>2012.12.05</span>组织结构</h3>
+                    <span id="span_Content"></span>
+                </div>
+            </div>
+        </div>
+        <!--content end-->
+        <div class="clear"></div>
+        <!--Footer-->
+        <%template src="_footer.html"%>
+        <!--/Footer-->
+        <!--quick nav start-->
+        <%template src="_quick_nav.html"%>
+        <!--quick nav end-->
+    </div></body>
+</html>

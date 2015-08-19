@@ -529,6 +529,7 @@
     <Content Include="templates\main\scientific.html" />
     <Content Include="templates\main\survey.html" />
     <Content Include="templates\main\survey_show.html" />
+    <Content Include="templates\main\treatment_show.html" />
     <Content Include="templates\main\_quick_nav.html" />
     <Content Include="templates\main\login.html" />
     <Content Include="templates\main\survey_list.html" />

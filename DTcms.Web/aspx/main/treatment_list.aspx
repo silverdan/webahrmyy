@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/19 16:39:34.
-		本页面代码由DTcms模板引擎生成于 2015/8/19 16:39:34. 
+		This page was created by DTcms Template Engine at 2015/8/19 17:26:04.
+		本页面代码由DTcms模板引擎生成于 2015/8/19 17:26:04. 
 	*/
 
 	base.OnInit(e);
@@ -221,7 +221,7 @@ override protected void OnInit(EventArgs e)
 	{
 
 	templateBuilder.Append("\r\n                <li><em>" + Utils.ObjectToStr(dr["add_time"]) + "</em>\r\n                  <a href=\"");
-	templateBuilder.Append(linkurl("Treatment_show",Utils.ObjectToStr(dr["id"])));
+	templateBuilder.Append(linkurl("treatment_show",Utils.ObjectToStr(dr["id"])));
 
 	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a>\r\n                  <!--<div class=\"note\">\r\n                    ");
 	if (Utils.ObjectToStr(dr["img_url"])!="")

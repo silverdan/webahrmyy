@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<%set string category_title=get_category_title(model.category_id,"新闻资讯")%>
+<%set int category_id = model.category_id%>
 <title>{model.title} - {site.name}</title>
 <meta name="keywords" content="{model.seo_keywords}" />
 <meta name="description" content="{model.seo_description}" />
@@ -52,55 +54,38 @@
                 </div>
                 <div class="hospital_link"></div>
             </div>
-            <div class="center news_center">
-                <div class="site_nav news_nav">首页 > {model.title}</div>
-                <div class="news_control">
-                    <div class="sty01"><a href="news.aspx?D=1" id="DateAscOrDesc">按发布日期升序排列</a></div>
-                    <div class="sty02"><a href="news.aspx?H=1" id="HitAscOrDesc">按点击量降序排列</a></div>
-
-
-                    <div class="DragBody"><div class="FontSizeChange">字号调整：</div><div id="dragContainer"><div id="dragDiv"></div></div></div>
-                    <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="<%templateskin%>/images/btn_news01.jpg" width="40" height="40" alt="分享" title="分享" /><a class="shareCount"></a></div>
-                    <script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=6713615"></script>
-                    <script type="text/javascript" id="bdshell_js"></script>
-                    <script type="text/javascript">                                                                                                                                                                document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);</script>
-                </div>
-                <div class="news_list">
-
-                    
-              <ul >
-                <%set DataTable newsList=get_article_list(channel, category_id, pagesize, page, "status=0", out totalcount, out pagelist, "Treatment_list", category_id, "__id__")%> 
-                <%foreach(DataRow dr in newsList.Rows)%>
-                <li><em>{dr[add_time]}</em>
-                  <a href="<%linkurl("treatment_show",{dr[id]})%>">{dr[title]}</a>
-                  <!--<div class="note">
-                    <%if({dr[img_url]}!="")%>
-                    <b><img src="{dr[img_url]}" /></b>
-                    <%/if%>
-                    <p>{dr[zhaiyao]}</p>
-                    <div class="info">
-                      <span class="time"></span>
-                      <span class="comm"><script type="text/javascript" src="{config.webpath}tools/submit_ajax.ashx?action=view_comment_count&id={dr[id]}"></script>人评论</span>
-                      <span class="view"><script type="text/javascript" src="{config.webpath}tools/submit_ajax.ashx?action=view_article_click&id={dr[id]}"></script>次浏览</span>
-                    </div>-->
-                  
-                </li>
-                <%/foreach%>
-              </ul> 
-                </div>
-                <div class="page_mob02">
-                    <!--页码列表-->
-                    <div id="anpNews">
-                        <div class="digg">{pagelist}</div>
-                    </div> 
-                    <!--/页码列表-->
-                </div>
-            </div>
-            <div class="right news_right">
-                <img src="<%templateskin%>/images/bj_news03.jpg" width="163" height="402" alt="相关文字描述" title="相关文字描述" />
-            </div>
+             <div class="center news_center">
+      <div class="site_nav news_nav">首页 > 就诊指南 > 住院指南</div>
+      <div class="news_mx news_mx2">
+        <h3 id="H3Title">{model.title}</h3>
+      </div>
+      <div class="news_control">
+        <span id="span_Date" class="sty01">发布日期:2012/12/18</span>
+               <span id="SpanHitNum" class="sty02">浏览量:14999</span>
+        <div class="DragBody"><div class="FontSizeChange">字号调整：</div><div id="dragContainer"><div id="dragDiv"></div></div></div>       
+        <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="images/btn_news01.jpg" width="40" height="40" alt="分享" title="分享" /><a class="shareCount"></a></div>
+        <script type="text/javascript" id="bdshare_js" data="type=button&amp;uid=6713615" ></script><script type="text/javascript" id="bdshell_js"></script><script type="text/javascript">document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000);</script>
+      </div>
+      <div class="news_mx">
+        <div id="ul_Content"> 
+        {model.content}
         </div>
-        <!--content end-->
+      </div>
+    </div>
+    <div class="right news_right n_mx">
+      <h5><img src="images/pic_024.jpg" width="168" height="71" alt="图片描述" title="图片描述" /></h5>
+      <div class="right_newsmx">
+        <h6>阅读推荐</h6>
+        <ul>
+            
+                 <li><a href="Notice_detail.aspx?id=7168">河南省医师协会泌尿外科医师分会成立大会暨第二届河南省泌尿微创新技术研讨会的通知</a><br /><em>2015-08-19</em>浏览：6</li>
+              
+                
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--content end-->
         <div class="clear"></div>
         <!--<div class="section clearfix">
           <div class="ntitle">

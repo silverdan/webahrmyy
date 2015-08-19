@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/18 17:21:44.
-		本页面代码由DTcms模板引擎生成于 2015/8/18 17:21:44. 
+		This page was created by DTcms Template Engine at 2015/8/19 16:39:33.
+		本页面代码由DTcms模板引擎生成于 2015/8/19 16:39:33. 
 	*/
 
 	base.OnInit(e);
@@ -103,18 +103,66 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\">联系我们</a></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>-->\r\n\r\n\r\n<div class=\"header\">\r\n    <h1><a href=\"index.aspx\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/logo.jpg\" width=\"301\" height=\"62\" alt=\"河南省人民医院官方网站\" title=\"河南省人民医院官方网站\" /></a></h1>\r\n    <h2>\r\n        <span class=\"sty_right\"><a href=\"Site_Map.aspx\">站点地图</a> | <a href=\"javascript:void(0)\" onclick=\"addToFavorite()\">加入收藏</a> | <a href=\"FunctionalDepartment.aspx?id=71\" target=\"_blank\">人事管理</a> |  <a href=\"https://61.163.73.190/por/login_psw.csp\" target=\"_blank\">内部OA</a>  </span>\r\n    </h2><input type=\"text\" class=\"search\" name=\"tbSearch\" id=\"tbSearch\" value=\"\" onkeypress=\"if(event.keyCode==13){document.all.btnSearch.click();return false;}\" /><input type=\"button\" class=\"btn_search\" name=\"btnSearch\" id=\"btnSearch\" value=\"搜 索\" onclick=\"SearchWords()\" />\r\n    <ul>\r\n    <li onclick=\"self.location = 'index.html'\" style=\"cursor:pointer;\" class='on'><a href=\"index.html\">首页</a></li>\r\n    <li onclick=\"self.location = 'treatment.html'\" style=\"cursor:pointer;\"><a href=\"treatment.html\">就诊指南</a></li>\r\n    <li onclick=\"self.location='survey.html'\" style=\"cursor:pointer;\"><a href=\"survey.html\">医院概况</a></li>\r\n    <li onclick=\"self.location='scientific.aspx'\" style=\"cursor:pointer;\"><a href=\"scientific.aspx\">科研教学</a></li>\r\n    <li onclick=\"self.location = '");
-	templateBuilder.Append(linkurl("news"));
+	templateBuilder.Append("/images/logo.jpg\" width=\"301\" height=\"62\" alt=\"安化县民医院官方网站\" title=\"安化县人民医院官方网站\" /></a></h1>\r\n    <h2>\r\n        <span class=\"sty_right\"><a href=\"Site_Map.aspx\">站点地图</a> | <a href=\"javascript:void(0)\" onclick=\"addToFavorite()\">加入收藏</a> | <a href=\"FunctionalDepartment.aspx?id=71\" target=\"_blank\">人事管理</a> |  <a href=\"https://61.163.73.190/por/login_psw.csp\" target=\"_blank\">内部OA</a>  </span>\r\n    </h2><input type=\"text\" class=\"search\" name=\"tbSearch\" id=\"tbSearch\" value=\"\" onkeypress=\"if(event.keyCode==13){document.all.btnSearch.click();return false;}\" /><input type=\"button\" class=\"btn_search\" name=\"btnSearch\" id=\"btnSearch\" value=\"搜 索\" onclick=\"SearchWords()\" />\r\n    <ul>\r\n    <li onclick=\"self.location ='");
+	templateBuilder.Append(linkurl("index"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\" class='on'><a href=\"");
+	templateBuilder.Append(linkurl("index"));
+
+	templateBuilder.Append("\">首页</a></li>\r\n    <li onclick=\"self.location ='");
+	templateBuilder.Append(linkurl("treatment_list"));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("news"));
+	templateBuilder.Append(linkurl("treatment_list"));
 
-	templateBuilder.Append("\">新闻动态</a></li>\r\n    <li onclick=\"self.location='science.aspx'\" style=\"cursor:pointer;\"><a href=\"science.aspx\">健康科普</a></li>\r\n    <li onclick=\"self.location='nursing.aspx'\" style=\"cursor:pointer;\"><a href=\"nursing.aspx\">护理园地</a></li>\r\n    <li onclick=\"self.location='work.aspx'\" style=\"cursor:pointer;\"><a href=\"work.aspx\">党群工作</a></li> \r\n    <li onclick=\"self.location='subject.aspx'\" style=\"cursor:pointer;\" class=\"listr\"><a href=\"subject.aspx\">专题</a></li>\r\n    </ul>\r\n</div>");
+	templateBuilder.Append("\">就诊指南</a></li>\r\n    <li onclick=\"self.location='");
+	templateBuilder.Append(linkurl("survey"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
+	templateBuilder.Append(linkurl("survey"));
+
+	templateBuilder.Append("\">医院概况</a></li>\r\n    <li onclick=\"self.location='");
+	templateBuilder.Append(linkurl("scientific"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
+	templateBuilder.Append(linkurl("scientific"));
+
+	templateBuilder.Append("\">科研教学</a></li>\r\n    <li onclick=\"self.location = '");
+	templateBuilder.Append(linkurl("news_list"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
+	templateBuilder.Append(linkurl("news_list"));
+
+	templateBuilder.Append("\">新闻动态</a></li>\r\n    <li onclick=\"self.location='");
+	templateBuilder.Append(linkurl("science"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
+	templateBuilder.Append(linkurl("science"));
+
+	templateBuilder.Append("\">健康科普</a></li>\r\n    <li onclick=\"self.location='");
+	templateBuilder.Append(linkurl("nursing"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
+	templateBuilder.Append(linkurl("nursing"));
+
+	templateBuilder.Append("\">护理园地</a></li>\r\n    <li onclick=\"self.location='");
+	templateBuilder.Append(linkurl("work"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
+	templateBuilder.Append(linkurl("work"));
+
+	templateBuilder.Append("\">党群工作</a></li> \r\n    <li onclick=\"self.location='");
+	templateBuilder.Append(linkurl("subject_list"));
+
+	templateBuilder.Append("'\" style=\"cursor:pointer;\" class=\"listr\"><a href=\"");
+	templateBuilder.Append(linkurl("subject_list"));
+
+	templateBuilder.Append("\">专题</a></li>\r\n    </ul>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n        <!--/Header-->\r\n\r\n        <div class=\"content\">\r\n            <div class=\"left\">\r\n                <div class=\"q_nav\">\r\n                    <h3><span><a href=\"javascript:void(0)\" id=\"ShowNav\">简洁显示</a></span>快速导航</h3>\r\n                    <div id=\"NavSuccinctly\">\r\n                        <dl class=\"cont\">\r\n                            <dt><a href=\"visit_nav.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_01.png\" width=\"44\" height=\"41\" alt=\"科室导航\" title=\"科室导航\" /></a></dt>\r\n                            <dd class=\"til\"><a href=\"visit_nav.aspx\" target=\"_blank\">科室导航</a></dd>\r\n                            <dd class=\"cont\">按医学部分类，浏览其下辖科室详细内容；顶部模型图操作：移动鼠标至相应部位，系统自动罗列当前部位所涉及科室。</dd>\r\n                            <dd class=\"btn\"><a href=\"visit_nav.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("/images/ico_01.png\" width=\"44\" height=\"41\" alt=\"科室导航\" title=\"科室导航\" /></a></dt>\r\n                            <dd class=\"til\"><a href=\"visit_nav.aspx\" target=\"_blank\">科室导航</a></dd>\r\n                            <dd class=\"cont\">按医学分类，浏览其下辖科室详细内容；顶部模型图操作：移动鼠标至相应部位，系统自动罗列当前部位所涉及科室。</dd>\r\n                            <dd class=\"btn\"><a href=\"visit_nav.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/btn_01.jpg\" width=\"74\" height=\"23\" alt=\"查看更多\" title=\"查看更多\" /></a></dd>\r\n                        </dl>\r\n                        <dl>\r\n                            <dt><a href=\"time.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
@@ -132,15 +180,15 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav002b.png\" width=\"54\" height=\"54\" alt=\"科室导航\" title=\"科室导航\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav002.png\" width=\"54\" height=\"54\" alt=\"科室导航\" title=\"科室导航\" /><p>科室导航</p></a></li>\r\n                            <li><a href=\"distribution.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("/images/ico_nav002.png\" width=\"54\" height=\"54\" alt=\"科室导航\" title=\"科室导航\" /><p>科室导航</p></a></li>\r\n                            <li><a href=\"#\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav003b.png\" width=\"54\" height=\"54\" alt=\"省医地图\" title=\"省医地图\" /><img class=\"NavNone\" src=\"");
+	templateBuilder.Append("/images/ico_nav003b.png\" width=\"54\" height=\"54\" alt=\"人医地图\" title=\"人医地图\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav003.png\" width=\"54\" height=\"54\" alt=\"省医地图\" title=\"省医地图\" /><p>省医地图</p></a></li>\r\n                            <li><a href=\"time.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("/images/ico_nav003.png\" width=\"54\" height=\"54\" alt=\"人医地图\" title=\"人医地图\" /><p>人医地图</p></a></li>\r\n                            <li><a href=\"time.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav004b.png\" width=\"54\" height=\"54\" alt=\"出诊安排\" title=\"出诊安排\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav004.png\" width=\"54\" height=\"54\" alt=\"出诊安排\" title=\"出诊安排\" /><p>出诊安排</p></a></li>\r\n                            <li><a href=\"http://www.hnsrmyy.net/Treatment_Detail.aspx?id=449\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("/images/ico_nav004.png\" width=\"54\" height=\"54\" alt=\"出诊安排\" title=\"出诊安排\" /><p>出诊安排</p></a></li>\r\n                            <li><a href=\"#\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav005b.png\" width=\"54\" height=\"54\" alt=\"预约挂号\" title=\"预约挂号\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
@@ -158,9 +206,9 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav008.png\" width=\"54\" height=\"54\" alt=\"信息查询\" title=\"信息查询\" /><p>信息查询</p></a></li>\r\n                            <li><a href=\"http://e.weibo.com/hnsrmyybnly\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav009b.png\" width=\"54\" height=\"54\" alt=\"省医微博\" title=\"省医微博\" /><img class=\"NavNone\" src=\"");
+	templateBuilder.Append("/images/ico_nav009b.png\" width=\"54\" height=\"54\" alt=\"人医微博\" title=\"人医微博\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav009.png\" width=\"54\" height=\"54\" alt=\"医生微博\" title=\"医生微博\" /><p>省医微博</p></a></li>\r\n                            <li><a href=\"Site_Map.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("/images/ico_nav009.png\" width=\"54\" height=\"54\" alt=\"医生微博\" title=\"医生微博\" /><p>人医微博</p></a></li>\r\n                            <li><a href=\"Site_Map.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav010b.png\" width=\"54\" height=\"54\" alt=\"站点地图\" title=\"站点地图\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
@@ -172,7 +220,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav014b.png\" width=\"54\" height=\"54\" alt=\"资料下载\" title=\"资料下载\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav014a.png\" width=\"54\" height=\"54\" alt=\"资料下载\" title=\"资料下载\" /><p>资料下载</p></a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"sy_360\">\r\n                    <h3><span><a href=\"distribution.aspx\" target=\"_blank\"><img src=\"images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"旋转\" title=\"旋转\" /></a></span>三维实景导航</h3>\r\n                    <dl>\r\n                        <dt>\r\n                            <a href=\"distribution.aspx\" target=\"_blank\"><img onmouseover=\"this.src = '");
+	templateBuilder.Append("/images/ico_nav014a.png\" width=\"54\" height=\"54\" alt=\"资料下载\" title=\"资料下载\" /><p>资料下载</p></a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"sy_360\">\r\n                    <h3><span><a href=\"distribution.aspx\" target=\"_blank\"><img src=\"images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"旋转\" title=\"旋转\" /></a></span>人医微信号</h3>\r\n                    <dl>\r\n                        <dt>\r\n                            <a href=\"distribution.aspx\" target=\"_blank\"><img onmouseover=\"this.src = '");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/pic_360a.jpg'\" onmouseout=\"    this.src = '");
 	templateBuilder.Append("/templates/main");
@@ -220,17 +268,17 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(Utils.GetVersion().ToString());
 
 	templateBuilder.Append("</p>\r\n    <p>Copyright &copy; 2009-2015 dtcms.net Corporation,All Rights Reserved.</p>\r\n    <p><script src=\"http://s24.cnzz.com/stat.php?id=1996164&web_id=1996164&show=pic\" language=\"javascript\"></");
-	templateBuilder.Append("script></p>\r\n  </div>\r\n</div>-->\r\n\r\n\r\n<!--footer begin-->\r\n\r\n<div class=\"footer\">\r\n    <div class=\"sy_newsp\">\r\n        <h3>省医院报</h3>\r\n        <select name=\"ddlYears\" id=\"ddlYears\" onchange=\"GetTimesByYear(this)\">\r\n            <option value=\"0\">请选择年份</option>\r\n            <option value=\"2015\">2015年</option>\r\n            <option value=\"2014\">2014年</option>\r\n        </select>\r\n        <select class=\"sty01\" name=\"ddlTimes\" id=\"ddlTimes\">\r\n            <option value=\"0\">选择期数</option>\r\n        </select>\r\n        <input class=\"sea_go\" name=\"btnGoNewsPaper\" id=\"btnGoNewsPaper\" onclick=\"GoNewsPaper()\" type=\"button\" />\r\n    </div>\r\n    <div class=\"sy_ysg\">\r\n        <dl>\r\n            <dt><a href=\"history.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("script></p>\r\n  </div>\r\n</div>-->\r\n\r\n\r\n<!--footer begin-->\r\n\r\n<div class=\"footer\">\r\n    <div class=\"sy_newsp\">\r\n        <h3>人医院报</h3>\r\n        <select name=\"ddlYears\" id=\"ddlYears\" onchange=\"GetTimesByYear(this)\">\r\n            <option value=\"0\">请选择年份</option>\r\n            <option value=\"2015\">2015年</option>\r\n            <option value=\"2014\">2014年</option>\r\n        </select>\r\n        <select class=\"sty01\" name=\"ddlTimes\" id=\"ddlTimes\">\r\n            <option value=\"0\">选择期数</option>\r\n        </select>\r\n        <input class=\"sea_go\" name=\"btnGoNewsPaper\" id=\"btnGoNewsPaper\" onclick=\"GoNewsPaper()\" type=\"button\" />\r\n    </div>\r\n    <div class=\"sy_ysg\">\r\n        <dl>\r\n            <dt><a href=\"history.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/pic_ysg01.jpg\" width=\"160\" height=\"59\" alt=\"院史馆\" title=\"院史馆\" /></a></dt>\r\n            <dd>\r\n                <a href=\"history.aspx\">百年省医</a>\r\n                <p>Hospital Historical</p>\r\n            </dd>\r\n        </dl>\r\n    </div>\r\n    <div class=\"sy_kslj\">\r\n        <ul>\r\n            <li><a target=\"_blank\" href=\"http://e.t.qq.com/hnsrmyybnly\"><img src=\"");
+	templateBuilder.Append("/images/pic_ysg01.jpg\" width=\"160\" height=\"59\" alt=\"院史馆\" title=\"院史馆\" /></a></dt>\r\n            <dd>\r\n                <a href=\"history.aspx\">人医历史</a>\r\n                <p>Hospital Historical</p>\r\n            </dd>\r\n        </dl>\r\n    </div>\r\n    <div class=\"sy_kslj\">\r\n        <ul>\r\n            <li><a target=\"_blank\" href=\"http://e.t.qq.com/hnsrmyybnly\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/pic_weiboa.jpg\" width=\"67\" height=\"61\" alt=\"省医官方微博\" title=\"省医官方微博\" /><span>省医微博<br /><em>WeiBo</em></span></a></li>\r\n            <li><a target=\"_blank\" href=\"Telephone.aspx\"><img src=\"");
+	templateBuilder.Append("/images/pic_weiboa.jpg\" width=\"67\" height=\"61\" alt=\"人医官方微博\" title=\"人医官方微博\" /><span>人医微博<br /><em>WeiBo</em></span></a></li>\r\n            <li><a target=\"_blank\" href=\"Telephone.aspx\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/pic_tela.jpg\" width=\"67\" height=\"61\" alt=\"电话咨询\" title=\"电话咨询\" /><span>电话咨询<br /><em>PhoneBook</em></span></a></li>\r\n            <li><a target=\"_blank\" href=\"video.aspx\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/pic_videoa.jpg\" width=\"67\" height=\"61\" alt=\"视频\" title=\"视频\" /><span>视频<br /><em>Video</em></span></a></li>\r\n            <li><a target=\"_blank\" href=\"DownLoad.aspx\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/pic_downa.jpg\" width=\"67\" height=\"61\" alt=\"资料下载\" title=\"资料下载\" /><span>资料下载<br /><em>DownLoad</em></span></a></li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"sy_bottom\">\r\n        <h5>主办单位：河南省人民医院  &nbsp; &nbsp;咨询电话：0371-6558 0014&nbsp;&nbsp;6558 0100(非工作时间)&nbsp; &nbsp;门诊预约挂号电话：0371-6558 0070&nbsp; &nbsp;急救中心电话：0371-6558 0120 </h5><a href=\"links.aspx\" target=\"_blank\" id=\"BaseLinks\"><img src=\"images/yqlj_btn.gif\" width=\"56\" height=\"16\" /></a>\r\n        <h6>传真：0371-65964376 &nbsp;&nbsp;地 址：河南省郑州市纬五路7号 &nbsp; &nbsp;版权所有：河南省人民医院&nbsp; &nbsp;豫ICP备11033726号-1 &nbsp; &nbsp;豫卫网审[2011]第116号<em><a href=\"http://www.miraclevision.net/\" target=\"_blank\">技术支持：铭成奇迹</a></em></h6>\r\n    </div>\r\n</div>\r\n<div id=\"Bottom_CountCodeDiv\" style=\"display:none;\">\r\n    <script type=\"text/javascript\">\r\n    var _bdhmProtocol = ((\"https:\" == document.location.protocol) ? \" https://\" : \" http://\");\r\n    document.write(unescape(\"%3Cscript src='\" + _bdhmProtocol + \"hm.baidu.com/h.js%3F4a1d36386e8734a5fd29acec9114818d' type='text/javascript'%3E%3C/script%3E\"));\r\n    document.write(unescape(\"%3Cscript src='\" + _bdhmProtocol + \"hm.baidu.com/h.js%3Fafd2ae44e23648da4e8a81a7b1349be4' type='text/javascript'%3E%3C/script%3E\"));\r\n    </");
+	templateBuilder.Append("/images/pic_downa.jpg\" width=\"67\" height=\"61\" alt=\"资料下载\" title=\"资料下载\" /><span>资料下载<br /><em>DownLoad</em></span></a></li>\r\n        </ul>\r\n    </div>\r\n    <div class=\"sy_bottom\">\r\n        <h5>主办单位：安化县人民医院  &nbsp; &nbsp;咨询电话：0737-7298 000&nbsp;&nbsp;&nbsp; &nbsp;门诊预约挂号电话： &nbsp; &nbsp;急救中心电话：7298120 </h5><a href=\"links.aspx\" target=\"_blank\" id=\"BaseLinks\"><img src=\"images/yqlj_btn.gif\" width=\"56\" height=\"16\" /></a>\r\n        <h6>传真：0737 7298000 &nbsp;&nbsp;地 址：安化县东坪镇迎春路7号 &nbsp; &nbsp;版权所有：安化县人民医院&nbsp; &nbsp;湘ICP备10202106号 &nbsp; &nbsp;<em><a href=\"http://www.miraclevision.net/\" target=\"_blank\">技术支持：长沙三替信息科技有限公司</a></em></h6>\r\n    </div>\r\n</div>\r\n<div id=\"Bottom_CountCodeDiv\" style=\"display:none;\">\r\n    <script type=\"text/javascript\">\r\n    var _bdhmProtocol = ((\"https:\" == document.location.protocol) ? \" https://\" : \" http://\");\r\n    document.write(unescape(\"%3Cscript src='\" + _bdhmProtocol + \"hm.baidu.com/h.js%3F4a1d36386e8734a5fd29acec9114818d' type='text/javascript'%3E%3C/script%3E\"));\r\n    document.write(unescape(\"%3Cscript src='\" + _bdhmProtocol + \"hm.baidu.com/h.js%3Fafd2ae44e23648da4e8a81a7b1349be4' type='text/javascript'%3E%3C/script%3E\"));\r\n    </");
 	templateBuilder.Append("script>\r\n</div>\r\n<!--footer end-->\r\n<div class=\"page_tr\"></div>");
 
 

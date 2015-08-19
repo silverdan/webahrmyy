@@ -30,7 +30,7 @@ div#NavSuccinctly{display:none; background:#fff; width:271px;float:right;height:
   
   
 
-/*--省医360°*/
+/*--人医360°*/
 .sy_360{width:275px; margin-left:52px; height:166px; background:#FFF url(../images/bj_sy360.gif) repeat-x; margin-top:8px;}
   .sy_360 h3{ margin-top:8px; background:#FF5A00; height:26px; line-height:26px;color:#FFF; font-size:18px; padding-left:20px; margin-bottom:12px;}
   .sy_360 h3 span{ float:right; padding:8px 20px 0 0;}
@@ -48,7 +48,7 @@ div#NavSuccinctly{display:none; background:#fff; width:271px;float:right;height:
   .banner div#IndexImagesContent img{width:638px; height:302px; }
   .banner div#IndexImages{width:17px; height:68px; position:absolute; top:78px; left:0; z-index:10; padding:30px 21px; background:url(../images/bj_transparent.png) repeat-y;}
   .banner div#IndexImages img{ margin-bottom:10px;}
-/*省医快讯*/
+/*人医快讯*/
 .sy_news{ width:214px; height:134px; float:left; margin-right:15px;padding-left:10px; }
   .sy_news h4{ width:214px; height:42px; line-height:21px; background:url(../images/ico_06.jpg) 10px 8px no-repeat; text-indent:2em; font-size:14px;color:#FF6511; margin-bottom:6px; margin-top:-4px;}
   .sy_news h4 a{color:#FF6511;}
@@ -79,7 +79,7 @@ div#NavSuccinctly{display:none; background:#fff; width:271px;float:right;height:
   .doctors span.btn_doc{ width:60px; height:15px; position:absolute; display:block; bottom:20px; right:40px;}
   .doctors span.btn_doc img{ margin:0 5px;}
 div#doctorsLoader{ width:425px; height:58px; position:absolute; display:none; text-align:center; padding-top:42px; top:50px;z-index:120; left:45px;}
-/*省医新浪微博*/
+/*人医新浪微博*/
 div#n1Tab_Content0{ display:block;}
 div.n1Tab_Content{ display:none;}
 .weibo_sina,.weibo_rmw{width:310px; height:135px; float:left; border-bottom:#D2D2D2 1px solid; padding:0px;}

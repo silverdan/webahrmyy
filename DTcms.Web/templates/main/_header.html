@@ -46,19 +46,19 @@
 
 
 <div class="header">
-    <h1><a href="index.aspx"><img src="<%templateskin%>/images/logo.jpg" width="301" height="62" alt="河南省人民医院官方网站" title="河南省人民医院官方网站" /></a></h1>
+    <h1><a href="index.aspx"><img src="<%templateskin%>/images/logo.jpg" width="301" height="62" alt="安化县民医院官方网站" title="安化县人民医院官方网站" /></a></h1>
     <h2>
         <span class="sty_right"><a href="Site_Map.aspx">站点地图</a> | <a href="javascript:void(0)" onclick="addToFavorite()">加入收藏</a> | <a href="FunctionalDepartment.aspx?id=71" target="_blank">人事管理</a> |  <a href="https://61.163.73.190/por/login_psw.csp" target="_blank">内部OA</a>  </span>
     </h2><input type="text" class="search" name="tbSearch" id="tbSearch" value="" onkeypress="if(event.keyCode==13){document.all.btnSearch.click();return false;}" /><input type="button" class="btn_search" name="btnSearch" id="btnSearch" value="搜 索" onclick="SearchWords()" />
     <ul>
-    <li onclick="self.location = 'index.html'" style="cursor:pointer;" class='on'><a href="index.html">首页</a></li>
-    <li onclick="self.location = 'treatment.html'" style="cursor:pointer;"><a href="treatment.html">就诊指南</a></li>
-    <li onclick="self.location='survey.html'" style="cursor:pointer;"><a href="survey.html">医院概况</a></li>
-    <li onclick="self.location='scientific.aspx'" style="cursor:pointer;"><a href="scientific.aspx">科研教学</a></li>
-    <li onclick="self.location = '<%linkurl("news")%>'" style="cursor:pointer;"><a href="<%linkurl("news")%>">新闻动态</a></li>
-    <li onclick="self.location='science.aspx'" style="cursor:pointer;"><a href="science.aspx">健康科普</a></li>
-    <li onclick="self.location='nursing.aspx'" style="cursor:pointer;"><a href="nursing.aspx">护理园地</a></li>
-    <li onclick="self.location='work.aspx'" style="cursor:pointer;"><a href="work.aspx">党群工作</a></li> 
-    <li onclick="self.location='subject.aspx'" style="cursor:pointer;" class="listr"><a href="subject.aspx">专题</a></li>
+    <li onclick="self.location ='<%linkurl("index")%>'" style="cursor:pointer;" class='on'><a href="<%linkurl("index")%>">首页</a></li>
+    <li onclick="self.location ='<%linkurl("treatment_list")%>'" style="cursor:pointer;"><a href="<%linkurl("treatment_list")%>">就诊指南</a></li>
+    <li onclick="self.location='<%linkurl("survey")%>'" style="cursor:pointer;"><a href="<%linkurl("survey")%>">医院概况</a></li>
+    <li onclick="self.location='<%linkurl("scientific")%>'" style="cursor:pointer;"><a href="<%linkurl("scientific")%>">科研教学</a></li>
+    <li onclick="self.location = '<%linkurl("news_list")%>'" style="cursor:pointer;"><a href="<%linkurl("news_list")%>">新闻动态</a></li>
+    <li onclick="self.location='<%linkurl("science")%>'" style="cursor:pointer;"><a href="<%linkurl("science")%>">健康科普</a></li>
+    <li onclick="self.location='<%linkurl("nursing")%>'" style="cursor:pointer;"><a href="<%linkurl("nursing")%>">护理园地</a></li>
+    <li onclick="self.location='<%linkurl("work")%>'" style="cursor:pointer;"><a href="<%linkurl("work")%>">党群工作</a></li> 
+    <li onclick="self.location='<%linkurl("subject_list")%>'" style="cursor:pointer;" class="listr"><a href="<%linkurl("subject_list")%>">专题</a></li>
     </ul>
 </div>

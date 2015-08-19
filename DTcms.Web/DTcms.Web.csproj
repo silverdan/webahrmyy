@@ -526,6 +526,9 @@
     <Content Include="templates\main\js\login-validate.js" />
     <Content Include="templates\main\js\picture.js" />
     <Content Include="templates\main\js\register-validate.js" />
+    <Content Include="templates\main\scientific.html" />
+    <Content Include="templates\main\survey.html" />
+    <Content Include="templates\main\survey_show.html" />
     <Content Include="templates\main\_quick_nav.html" />
     <Content Include="templates\main\login.html" />
     <Content Include="templates\main\survey_list.html" />
@@ -559,7 +562,9 @@
     <Content Include="templates\main\_share_js.html" />
     <Content Include="templates\main\_ucenter_nav.html" />
     <Content Include="watermark.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

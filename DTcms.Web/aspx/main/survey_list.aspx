@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/19 17:26:04.
-		本页面代码由DTcms模板引擎生成于 2015/8/19 17:26:04. 
+		This page was created by DTcms Template Engine at 2015/8/20 17:24:46.
+		本页面代码由DTcms模板引擎生成于 2015/8/20 17:24:46. 
 	*/
 
 	base.OnInit(e);
@@ -107,16 +107,16 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\">首页</a></li>\r\n    <li onclick=\"self.location ='");
-	templateBuilder.Append(linkurl("treatment_list"));
+	templateBuilder.Append(linkurl("treatment_list",64));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("treatment_list"));
+	templateBuilder.Append(linkurl("treatment_list",64));
 
 	templateBuilder.Append("\">就诊指南</a></li>\r\n    <li onclick=\"self.location='");
-	templateBuilder.Append(linkurl("survey"));
+	templateBuilder.Append(linkurl("survey_show",154));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("survey"));
+	templateBuilder.Append(linkurl("survey_show",154));
 
 	templateBuilder.Append("\">医院概况</a></li>\r\n    <li onclick=\"self.location='");
 	templateBuilder.Append(linkurl("scientific"));
@@ -125,10 +125,10 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("scientific"));
 
 	templateBuilder.Append("\">科研教学</a></li>\r\n    <li onclick=\"self.location = '");
-	templateBuilder.Append(linkurl("news_list"));
+	templateBuilder.Append(linkurl("news_list",60));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("news_list"));
+	templateBuilder.Append(linkurl("news_list",60));
 
 	templateBuilder.Append("\">新闻动态</a></li>\r\n    <li onclick=\"self.location='");
 	templateBuilder.Append(linkurl("science"));
@@ -159,7 +159,7 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n        <!--/Header-->\r\n        <!--content begin-->\r\n        <div class=\"content survey_cont\">\r\n            <!--left-->\r\n            ");
 
-	templateBuilder.Append("<div class=\"left\">\r\n                <div class=\"survey_left\">\r\n                    <ul>\r\n                        <!--<li><span>Introduction</span><a href=\"survey.html\">医院简介</a></li>\r\n                        <li><span>Course</span><a href=\"course.aspx\">医院沿革</a></li>\r\n                        <li><span>Honor</span><a href=\"honor.aspx\">荣誉称号</a></li>\r\n                        <li><span>Culture</span><a href=\"culture.aspx\">医院文化</a></li>\r\n                        <li><span>Newspaper</span><a href=\"NewsPaper.aspx\">院报</a></li>\r\n                        <li ><span>Architecture</span><a href=\"architecture.aspx\">组织结构</a></li>-->\r\n                        \r\n                        ");
+	templateBuilder.Append("<div class=\"left\">\r\n                <div class=\"survey_left\">\r\n                    <ul>      \r\n                        ");
 	DataTable categoryList1 = get_category_child_list(channel, 0);
 
 	foreach(DataRow cdr1 in categoryList1.Rows)

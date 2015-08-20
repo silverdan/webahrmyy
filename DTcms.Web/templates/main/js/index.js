@@ -170,8 +170,8 @@ $(function() {
 		interval = window.setTimeout(IndexImagesPlay, delay);
 	}
 	function changeIndexImage() {
-		$("div#IndexImages a").find("img").attr({ src: "images/ico_04b.gif" });
-		$("div#IndexImages a").find("img").eq(IndexNum).attr({ src: "images/ico_04.gif" });
+		$("div#IndexImages a").find("img").attr({ src: "/templates/main/images/ico_04b.gif" });
+		$("div#IndexImages a").find("img").eq(IndexNum).attr({ src: "/templates/main/images/ico_04.gif" });
 		if (IndexNum != LastNum) {
 			$last = $("div#IndexImagesContent").children("ul").children("li").eq(LastNum);
 			$last.hide();

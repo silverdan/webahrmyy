@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/19 17:26:03.
-		本页面代码由DTcms模板引擎生成于 2015/8/19 17:26:03. 
+		This page was created by DTcms Template Engine at 2015/8/20 17:24:45.
+		本页面代码由DTcms模板引擎生成于 2015/8/20 17:24:45. 
 	*/
 
 	base.OnInit(e);
@@ -110,16 +110,16 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\">首页</a></li>\r\n    <li onclick=\"self.location ='");
-	templateBuilder.Append(linkurl("treatment_list"));
+	templateBuilder.Append(linkurl("treatment_list",64));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("treatment_list"));
+	templateBuilder.Append(linkurl("treatment_list",64));
 
 	templateBuilder.Append("\">就诊指南</a></li>\r\n    <li onclick=\"self.location='");
-	templateBuilder.Append(linkurl("survey"));
+	templateBuilder.Append(linkurl("survey_show",154));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("survey"));
+	templateBuilder.Append(linkurl("survey_show",154));
 
 	templateBuilder.Append("\">医院概况</a></li>\r\n    <li onclick=\"self.location='");
 	templateBuilder.Append(linkurl("scientific"));
@@ -128,10 +128,10 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("scientific"));
 
 	templateBuilder.Append("\">科研教学</a></li>\r\n    <li onclick=\"self.location = '");
-	templateBuilder.Append(linkurl("news_list"));
+	templateBuilder.Append(linkurl("news_list",60));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("news_list"));
+	templateBuilder.Append(linkurl("news_list",60));
 
 	templateBuilder.Append("\">新闻动态</a></li>\r\n    <li onclick=\"self.location='");
 	templateBuilder.Append(linkurl("science"));
@@ -160,7 +160,9 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">专题</a></li>\r\n    </ul>\r\n</div>");
 
 
-	templateBuilder.Append("\r\n        <!--/Header-->\r\n\r\n        <div class=\"content\">\r\n            <div class=\"left\">\r\n                <div class=\"q_nav\">\r\n                    <h3><span><a href=\"javascript:void(0)\" id=\"ShowNav\">简洁显示</a></span>快速导航</h3>\r\n                    <div id=\"NavSuccinctly\">\r\n                        <dl class=\"cont\">\r\n                            <dt><a href=\"visit_nav.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("\r\n        <!--/Header-->\r\n\r\n        <div class=\"content\">\r\n            <div class=\"left\">\r\n            <!--快速导航-->\r\n        		");
+
+	templateBuilder.Append("<div class=\"q_nav\">\r\n                    <h3><span><a href=\"javascript:void(0)\" id=\"ShowNav\">简洁显示</a></span>快速导航</h3>\r\n                    <div id=\"NavSuccinctly\">\r\n                        <dl class=\"cont\">\r\n                            <dt><a href=\"visit_nav.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_01.png\" width=\"44\" height=\"41\" alt=\"科室导航\" title=\"科室导航\" /></a></dt>\r\n                            <dd class=\"til\"><a href=\"visit_nav.aspx\" target=\"_blank\">科室导航</a></dd>\r\n                            <dd class=\"cont\">按医学分类，浏览其下辖科室详细内容；顶部模型图操作：移动鼠标至相应部位，系统自动罗列当前部位所涉及科室。</dd>\r\n                            <dd class=\"btn\"><a href=\"visit_nav.aspx\" target=\"_blank\"><img src=\"");
 	templateBuilder.Append("/templates/main");
@@ -220,13 +222,87 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav014b.png\" width=\"54\" height=\"54\" alt=\"资料下载\" title=\"资料下载\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav014a.png\" width=\"54\" height=\"54\" alt=\"资料下载\" title=\"资料下载\" /><p>资料下载</p></a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n                <div class=\"sy_360\">\r\n                    <h3><span><a href=\"distribution.aspx\" target=\"_blank\"><img src=\"images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"旋转\" title=\"旋转\" /></a></span>人医微信号</h3>\r\n                    <dl>\r\n                        <dt>\r\n                            <a href=\"distribution.aspx\" target=\"_blank\"><img onmouseover=\"this.src = '");
+	templateBuilder.Append("/images/ico_nav014a.png\" width=\"54\" height=\"54\" alt=\"资料下载\" title=\"资料下载\" /><p>资料下载</p></a></li>\r\n                        </ul>\r\n                    </div>\r\n                </div>");
+
+
+	templateBuilder.Append("\r\n        	<!--/快速导航-->\r\n                <div class=\"sy_360\">\r\n                    <h3><span><a href=\"distribution.aspx\" target=\"_blank\"><img src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"旋转\" title=\"旋转\" /></a></span>人医微信号</h3>\r\n                    <dl>\r\n                        <dt>\r\n                            <a href=\"distribution.aspx\" target=\"_blank\"><img onmouseover=\"this.src = '");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/pic_360a.jpg'\" onmouseout=\"    this.src = '");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/pic_360.jpg'\" src=\"images/pic_360.jpg\" width=\"96\" height=\"97\" alt=\"360度\" title=\"360度\" /></a>\r\n                        </dt>\r\n                        <dd class=\"til\">使用说明 &nbsp;&nbsp; <img src=\"images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"切换\" /></dd>\r\n                        <dd>通过鼠标横向拖拽，实现角度切换，可点击每个楼层查看详细。</dd>\r\n                    </dl>\r\n                </div>\r\n            </div>\r\n            <div class=\"right\">\r\n                <div class=\"banner\">\r\n                    <div class=\"AdvertBox\">\r\n                        <div><a href=\"javascript:void(0)\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/banner_index.jpg\" id=\"result_banner\" width=\"638\" height=\"302\" alt=\"河南省人民医院\" /></a></div>\r\n                        <div class=\"Advert_time\">还剩<span id=\"Advert_span\">6</span>秒</div>\r\n                    </div>\r\n                    <div id=\"IndexImagesContent\">\r\n                        <ul>\r\n                            <li>\r\n                                <a href=\"http://www.hnsrmyy.net/news_detail.aspx?id=7130\" target=\"_blank\"><img src=\"/uploadfiles/thumb/201507221636128.jpg\" width=\"638\" height=\"302\" alt=\"马保根院长在专题党课上强调：切实践行“三严三实”要求 扎实推进党员干部作风建设\" title=\"马保根院长在专题党课上强调：切实践行“三严三实”要求 扎实推进党员干部作风建设\" /></a>\r\n                                <div class=\"pic_hover\"><p>马保根院长在专题党课上强调：切实践行“三严三实”要求 扎实推进党员干部作风建设</p></div>\r\n                            </li>\r\n\r\n                            <li>\r\n                                <a href=\"http://www.hnsrmyy.net/news_detail.aspx?id=7116\" target=\"_blank\"><img src=\"/uploadfiles/thumb/2015070816152683.jpg\" width=\"638\" height=\"302\" alt=\"在庆祝建党94周年大会上，院党委强调—加强党员干部队伍建设 促进医院科学发展\" title=\"在庆祝建党94周年大会上，院党委强调—加强党员干部队伍建设 促进医院科学发展\" /></a>\r\n                                <div class=\"pic_hover\"><p>在庆祝建党94周年大会上，院党委强调—加强党员干部队伍建设 促进医院科学发展</p></div>\r\n                            </li>\r\n\r\n                            <li>\r\n                                <a href=\"http://www.hnsrmyy.net/news_detail.aspx?id=7114\" target=\"_blank\"><img src=\"/uploadfiles/thumb/2015070816184233.jpg\" width=\"638\" height=\"302\" alt=\"“七一”慰问送真情\" title=\"“七一”慰问送真情\" /></a>\r\n                                <div class=\"pic_hover\"><p>“七一”慰问送真情</p></div>\r\n                            </li>\r\n\r\n                            <li>\r\n                                <a href=\"http://www.hnsrmyy.net/news_detail.aspx?id=7106\" target=\"_blank\"><img src=\"/uploadfiles/thumb/2015070816121135.jpg\" width=\"638\" height=\"302\" alt=\"“河南省人民医院的建设成就令人震撼！”—加拿大皇家医师学会副主席苏珊·布瑞恩一行来院访问\" title=\"“河南省人民医院的建设成就令人震撼！”—加拿大皇家医师学会副主席苏珊·布瑞恩一行来院访问\" /></a>\r\n                                <div class=\"pic_hover\"><p>“河南省人民医院的建设成就令人震撼！”—加拿大皇家医师学会副主席苏珊·布瑞恩一行来院访问</p></div>\r\n                            </li>\r\n\r\n                            <li>\r\n                                <a href=\"javascript:void(0)\" target=\"_blank\"><img src=\"/uploadfiles/thumb/201503242049171.jpg\" width=\"638\" height=\"302\" alt=\"\" title=\"\" /></a>\r\n                                <div class=\"pic_hover\"><p></p></div>\r\n                            </li>\r\n\r\n                            <li>\r\n                                <a href=\"http://www.hnsrmyy.net/news_detail.aspx?id=5269\" target=\"_blank\"><img src=\"/uploadfiles/thumb/2013113008295830.jpg\" width=\"638\" height=\"302\" alt=\"河南省人民医院微信公众平台感谢您的关注！\" title=\"河南省人民医院微信公众平台感谢您的关注！\" /></a>\r\n                                <div class=\"pic_hover\"><p>河南省人民医院微信公众平台感谢您的关注！</p></div>\r\n                            </li>\r\n\r\n                            <li>\r\n                                <a href=\"http://www.hnsrmyy.net/section.aspx\" target=\"_blank\"><img src=\"/uploadfiles/thumb/2014121511404722.jpg\" width=\"638\" height=\"302\" alt=\"培育和践行社会主义核心价值观\" title=\"培育和践行社会主义核心价值观\" /></a>\r\n                                <div class=\"pic_hover\"><p>培育和践行社会主义核心价值观</p></div>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                    <div id=\"IndexImages\" style=\"top:10px;height:188px;\">\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04.gif\" width=\"17\" height=\"17\" alt=\"马保根院长在专题党课上强调：切实践行“三严三实”要求 扎实推进党员干部作风建设\" /> </a>\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04b.gif\" width=\"17\" height=\"17\" alt=\"在庆祝建党94周年大会上，院党委强调—加强党员干部队伍建设 促进医院科学发展\" /> </a>\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04b.gif\" width=\"17\" height=\"17\" alt=\"“七一”慰问送真情\" /> </a>\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04b.gif\" width=\"17\" height=\"17\" alt=\"“河南省人民医院的建设成就令人震撼！”—加拿大皇家医师学会副主席苏珊·布瑞恩一行来院访问\" /> </a>\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04b.gif\" width=\"17\" height=\"17\" alt=\"\" /> </a>\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04b.gif\" width=\"17\" height=\"17\" alt=\"河南省人民医院微信公众平台感谢您的关注！\" /> </a>\r\n\r\n                        <a href=\"javascript:void(0)\"><img src=\"images/ico_04b.gif\" width=\"17\" height=\"17\" alt=\"培育和践行社会主义核心价值观\" /> </a>\r\n\r\n                    </div>\r\n                    <div id=\"loader\"><img src=\"image/loading.gif\" width=\"16px\" height=\"16px\" /></div>\r\n                </div>\r\n                <div>\r\n                    <!--选项卡 begin-->\r\n                    <div class=\"bd\" id=\"n1Tab\">\r\n                        <div class=\"Tabtitle\">\r\n                            <h3 class=\"nTabs active\"><a href=\"news.aspx\" target=\"_blank\">人医快讯<em>Hospital News</em></a></h3>\r\n                            <h3 class=\"nTabs\"><a href=\"Notice.aspx\" target=\"_blank\">最新公告<em>Bulletin</em></a></h3>\r\n                            <h3 class=\"nTabs\">官方微博<em>WeiBo</em></h3>\r\n                        </div>\r\n                        <div class=\"TabContent\">\r\n                            <div id=\"n1Tab_Content0\" class=\"n1Tab_Content\">\r\n                                <div class=\"sy_news\">\r\n                                    <h4><a href=\"news_detail.aspx?id=7166\" id=\"a_FirstTitle\" target=\"_blank\">坚定信念严修身  立足本职求实效—院党委中心组召开“三...</a></h4>\r\n                                    <p id=\"p_FirstContent\" target=\"_blank\">8月6日下午，围绕“严以修身，加强党性修养，坚定理想信念，把牢思想和行动的‘总开关’”主题及“三查三保”活动，院党委中心组召开“三严三实...</p>\r\n                                </div>\r\n                                <div class=\"sy_pic01\">\r\n                                    <h5><img src=\"pic/pic_02.jpg\" width=\"130\" height=\"81\" alt=\"相关文字介绍\" /></h5>\r\n                                    <p></p>\r\n                                </div>\r\n                                <div class=\"sy_newsr\">\r\n                                    <ul>\r\n\r\n                                        <li><em>2015-08-13</em><a target=\"_blank\" href=\"news_detail.aspx?id=7165\">心血管病医院：专题学习研讨会</a></li>\r\n\r\n                                        <li><em>2015-08-13</em><a target=\"_blank\" href=\"news_detail.aspx?id=7164\">中国工程院院士韩雅玲莅临我院</a></li>\r\n\r\n                                        <li><em>2015-08-13</em><a target=\"_blank\" href=\"news_detail.aspx?id=7163\">国内著名专家聚集郑州解“男题</a></li>\r\n\r\n                                        <li><em>2015-08-13</em><a target=\"_blank\" href=\"news_detail.aspx?id=7161\">严格考官培训  提升住培水平</a></li>\r\n\r\n                                        <li><em>2015-08-13</em><a target=\"_blank\" href=\"news_detail.aspx?id=7160\">2015级硕士研究生开启求学</a></li>\r\n\r\n                                        <li><em>2015-08-13</em><a target=\"_blank\" href=\"news_detail.aspx?id=7158\">我院公共区域无线网络建设一期</a></li>\r\n                                    </ul>\r\n                                </div>\r\n                            </div>\r\n                            <div id=\"n1Tab_Content1\" class=\"n1Tab_Content\">\r\n                                <div class=\"sy_newsr synews2\">\r\n                                    <ul>\r\n\r\n                                        <li><em>2015-08-10</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=7143\">河南省人民医院卫生部四级妇科内镜手术培训基地《手拉手—妇科内镜手术培训班》通知</a></li>\r\n\r\n                                        <li><em>2015-07-22</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=7134\">河南省人民医院招募标准化病人（SP）公告</a></li>\r\n\r\n                                        <li><em>2015-07-14</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=7118\">2015年河南省人民医院临床药师(通科培训)秋季招生公告</a></li>\r\n\r\n                                        <li><em>2015-06-17</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=7080\">2015年端午节假期出诊医师排班表</a></li>\r\n\r\n                                        <li><em>2015-06-06</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=7064\">助产士招聘公示</a></li>\r\n\r\n                                        <li><em>2015-04-30</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=6947\">2015年五一劳动节门诊医师值班表</a></li>\r\n\r\n                                        <li><em>2015-04-29</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=6945\">河南省第二届尿道修复与重建学习班通知</a></li>\r\n\r\n                                        <li><em>2015-04-21</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=6938\">2015年公开招聘专业技术人员（全院）面试方案</a></li>\r\n\r\n                                        <li><em>2015-04-15</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=6932\">关于举办国家级继续医学教育项目“遗传病个体化医学检测新技术进展第二期学习班”二轮通知</a></li>\r\n\r\n                                        <li><em>2015-04-08</em><a target=\"_blank\" href=\"Notice_detail.aspx?id=6919\">关于我院2015年度护士招聘工作推迟的通知</a></li>\r\n\r\n                                    </ul>\r\n                                </div>\r\n                            </div>\r\n                            <div id=\"n1Tab_Content2\" class=\"n1Tab_Content\">\r\n                                <ul class=\"list_top\" id=\"weiboShare\"></ul>\r\n                            </div>\r\n                        </div>\r\n                    </div><!--选项卡 end-->\r\n                </div>\r\n                <div class=\"doctors\">\r\n                    <h3><span><a href=\"visit_nav.aspx\">科室与医生</a></span><span class=\"style1\">Department & Doctors</span></h3>\r\n                    <ul id=\"Offices\">\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=24\">泌尿外科</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=6\">肾病风湿免疫科</a></li>\r\n\r\n                        <li class=\"sty01\"><a target=\"_blank\" href=\"visit_office.aspx?id=57\">神经内科康馨病房</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=12\">神经内科</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=13\">消化内科</a></li>\r\n\r\n                        <li class=\"sty01\"><a target=\"_blank\" href=\"visit_office.aspx?id=30\">河南省立眼科医院</a></li>\r\n\r\n                        <li class=\"sty01\"><a target=\"_blank\" href=\"visit_office.aspx?id=2\">过敏反应科（变态反应科）</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=40\">整形美容外科</a></li>\r\n\r\n                    </ul>\r\n                    <div id=\"doctorsLoader\"><img src=\"image/loading.gif\" width=\"16px\" height=\"16px\" /></div>\r\n                    <span class=\"btn_doc\">\r\n                        <a href=\"javascript:bindRandomOffices()\"><img src=\"images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"切换\" /></a>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!--content end-->\r\n        <div class=\"clear\"></div>\r\n        <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("/images/banner_index.jpg\" id=\"result_banner\" width=\"638\" height=\"302\" alt=\"安化县人民医院\" /></a></div>\r\n                        <div class=\"Advert_time\">还剩<span id=\"Advert_span\">6</span>秒</div>\r\n                    </div>\r\n                    <div id=\"IndexImagesContent\">\r\n                        <ul>\r\n                        ");
+	DataTable focusNewsflash = get_article_list("news", 0, 6, "status=0 and is_slide=1 and img_url<>''");
+
+	foreach(DataRow dr in focusNewsflash.Rows)
+	{
+
+	templateBuilder.Append("\r\n							<li>\r\n                            <a href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
+
+	templateBuilder.Append("\" target=\"_blank\"><img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" width=\"638\" height=\"302\" alt=\"" + Utils.ObjectToStr(dr["title"]) + "\" title=\"" + Utils.ObjectToStr(dr["title"]) + "\" /></a>\r\n                            <div class=\"pic_hover\"><p>" + Utils.ObjectToStr(dr["title"]) + "</p></div>\r\n                            </li>\r\n                            ");
+	}	//end for if
+
+	templateBuilder.Append("\r\n                        </ul>\r\n                    </div>\r\n                    <div id=\"IndexImages\" style=\"top:10px;height:188px;\">\r\n						");
+	foreach(DataRow dr in focusNewsflash.Rows)
+	{
+
+	templateBuilder.Append("\r\n                        <a href=\"javascript:void(0)\"><img src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/images/ico_04.gif\" width=\"17\" height=\"17\" alt=\"" + Utils.ObjectToStr(dr["title"]) + "\" /> </a>\r\n						");
+	}	//end for if
+
+	templateBuilder.Append("\r\n                    </div>\r\n                    <div id=\"loader\"><img src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/image/loading.gif\" width=\"16px\" height=\"16px\" /></div>\r\n                </div>\r\n                <div>\r\n                    <!--选项卡 begin-->\r\n                    <div class=\"bd\" id=\"n1Tab\">\r\n                        <div class=\"Tabtitle\">\r\n                            <h3 class=\"nTabs active\"><a href=\"news.aspx\" target=\"_blank\">人医快讯<em>Hospital News</em></a></h3>\r\n                            <h3 class=\"nTabs\"><a href=\"Notice.aspx\" target=\"_blank\">最新公告<em>Bulletin</em></a></h3>\r\n                            <h3 class=\"nTabs\">官方微博<em>WeiBo</em></h3>\r\n                        </div>\r\n                        <div class=\"TabContent\">\r\n                        	<!--快讯公告-->\r\n                            <div id=\"n1Tab_Content0\" class=\"n1Tab_Content\">\r\n                            	");
+	DataTable focusNews = get_article_list("news", 0, 1, "status=0 and is_slide=1 and img_url<>''");
+
+	foreach(DataRow dr in focusNews.Rows)
+	{
+
+	templateBuilder.Append("\r\n                                <div class=\"sy_news\">\r\n                                    <h4><a href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
+
+	templateBuilder.Append("\" id=\"a_FirstTitle\" target=\"_blank\">" + Utils.ObjectToStr(dr["title"]) + "...</a></h4>\r\n                                    <p id=\"p_FirstContent\" target=\"_blank\">" + Utils.ObjectToStr(dr["zhaiyao"]) + "...</p>\r\n                                </div>\r\n                                <div class=\"sy_pic01\">\r\n                                    <h5><img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" width=\"130\" height=\"81\" alt=\"相关文字介绍\" /></h5>\r\n                                    <p></p>\r\n                                </div>\r\n                                ");
+	}	//end for if
+
+	templateBuilder.Append("\r\n                                <div class=\"sy_newsr\">\r\n                                    <ul>\r\n							  ");
+	DataTable newsList = get_article_list("news", 0, 6, "status=0");
+
+	int newdr__loop__id=0;
+	foreach(DataRow newdr in newsList.Rows)
+	{
+		newdr__loop__id++;
+
+
+	templateBuilder.Append("\r\n							        <li>\r\n							        	<em>");	templateBuilder.Append(Utils.ObjectToDateTime(Utils.ObjectToStr(newdr["add_time"])).ToString("MM-dd"));
+
+	templateBuilder.Append("</em>\r\n							        	<a target=\"_blank\" href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(newdr["id"])));
+
+	templateBuilder.Append("\" title=\"" + Utils.ObjectToStr(newdr["title"]) + "\">" + Utils.ObjectToStr(newdr["title"]) + "</a>\r\n							        </li>\r\n							        ");
+	}	//end for if
+
+	templateBuilder.Append("\r\n                                    </ul>\r\n                                </div>\r\n                            </div>\r\n                            <!--最新公告-->\r\n                            <div id=\"n1Tab_Content1\" class=\"n1Tab_Content\">\r\n                                <div class=\"sy_newsr synews2\">\r\n                                    <ul>\r\n                            ");
+	DataTable newsListno = get_article_list("news", 0, 12, "status=0");
+
+	int newdrno__loop__id=0;
+	foreach(DataRow newdrno in newsListno.Rows)
+	{
+		newdrno__loop__id++;
+
+
+	templateBuilder.Append("\r\n							        <li>\r\n							        	<em>");	templateBuilder.Append(Utils.ObjectToDateTime(Utils.ObjectToStr(newdrno["add_time"])).ToString("MM-dd"));
+
+	templateBuilder.Append("</em>\r\n							        	<a target=\"_blank\" href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(newdrno["id"])));
+
+	templateBuilder.Append("\" title=\"" + Utils.ObjectToStr(newdrno["title"]) + "\">" + Utils.ObjectToStr(newdrno["title"]) + "</a>\r\n							        </li>\r\n							        ");
+	}	//end for if
+
+	templateBuilder.Append("\r\n                                    </ul>\r\n                                </div>\r\n                            </div>\r\n                            <div id=\"n1Tab_Content2\" class=\"n1Tab_Content\">\r\n                                <ul class=\"list_top\" id=\"weiboShare\"></ul>\r\n                            </div>\r\n                        </div>\r\n                    </div><!--选项卡 end-->\r\n                </div>\r\n                <div class=\"doctors\">\r\n                    <h3><span><a href=\"visit_nav.aspx\">科室与医生</a></span><span class=\"style1\">Department & Doctors</span></h3>\r\n                    <ul id=\"Offices\">\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=24\">泌尿外科</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=6\">肾病风湿免疫科</a></li>\r\n\r\n                        <li class=\"sty01\"><a target=\"_blank\" href=\"visit_office.aspx?id=57\">神经内科康馨病房</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=12\">神经内科</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=13\">消化内科</a></li>\r\n\r\n                        <li class=\"sty01\"><a target=\"_blank\" href=\"visit_office.aspx?id=30\">河南省立眼科医院</a></li>\r\n\r\n                        <li class=\"sty01\"><a target=\"_blank\" href=\"visit_office.aspx?id=2\">过敏反应科（变态反应科）</a></li>\r\n\r\n                        <li><a target=\"_blank\" href=\"visit_office.aspx?id=40\">整形美容外科</a></li>\r\n\r\n                    </ul>\r\n                    <div id=\"doctorsLoader\"><img src=\"image/loading.gif\" width=\"16px\" height=\"16px\" /></div>\r\n                    <span class=\"btn_doc\">\r\n                        <a href=\"javascript:bindRandomOffices()\"><img src=\"images/btn_02right.png\" width=\"11\" height=\"10\" alt=\"切换\" /></a>\r\n                    </span>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!--content end-->\r\n        <div class=\"clear\"></div>\r\n        <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/index.js\"></");
 	templateBuilder.Append("script>\r\n        <!--Footer-->\r\n        ");

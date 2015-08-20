@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/19 17:26:03.
-		本页面代码由DTcms模板引擎生成于 2015/8/19 17:26:03. 
+		This page was created by DTcms Template Engine at 2015/8/20 17:24:45.
+		本页面代码由DTcms模板引擎生成于 2015/8/20 17:24:45. 
 	*/
 
 	base.OnInit(e);
@@ -106,16 +106,16 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("index"));
 
 	templateBuilder.Append("\">首页</a></li>\r\n    <li onclick=\"self.location ='");
-	templateBuilder.Append(linkurl("treatment_list"));
+	templateBuilder.Append(linkurl("treatment_list",64));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("treatment_list"));
+	templateBuilder.Append(linkurl("treatment_list",64));
 
 	templateBuilder.Append("\">就诊指南</a></li>\r\n    <li onclick=\"self.location='");
-	templateBuilder.Append(linkurl("survey"));
+	templateBuilder.Append(linkurl("survey_show",154));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("survey"));
+	templateBuilder.Append(linkurl("survey_show",154));
 
 	templateBuilder.Append("\">医院概况</a></li>\r\n    <li onclick=\"self.location='");
 	templateBuilder.Append(linkurl("scientific"));
@@ -124,10 +124,10 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append(linkurl("scientific"));
 
 	templateBuilder.Append("\">科研教学</a></li>\r\n    <li onclick=\"self.location = '");
-	templateBuilder.Append(linkurl("news_list"));
+	templateBuilder.Append(linkurl("news_list",60));
 
 	templateBuilder.Append("'\" style=\"cursor:pointer;\"><a href=\"");
-	templateBuilder.Append(linkurl("news_list"));
+	templateBuilder.Append(linkurl("news_list",60));
 
 	templateBuilder.Append("\">新闻动态</a></li>\r\n    <li onclick=\"self.location='");
 	templateBuilder.Append(linkurl("science"));

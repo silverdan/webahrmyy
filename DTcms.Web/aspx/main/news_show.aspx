@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/20 17:24:46.
-		本页面代码由DTcms模板引擎生成于 2015/8/20 17:24:46. 
+		This page was created by DTcms Template Engine at 2015/8/21 16:14:34.
+		本页面代码由DTcms模板引擎生成于 2015/8/21 16:14:34. 
 	*/
 
 	base.OnInit(e);
@@ -40,16 +40,19 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/css/second.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n    <link href=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/css/base.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("/css/base.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<!--<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("scripts/jquery/jquery-1.11.2.min.js\"></");
-	templateBuilder.Append("script>\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("script>-->\r\n<!--<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/common.js\"></");
-	templateBuilder.Append("script>\r\n    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("script>-->\r\n    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/jquery-1.7.2.min.js\"></");
-	templateBuilder.Append("script>\r\n    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("script>\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/js/common2.js\"></");
+	templateBuilder.Append("script>\r\n\r\n    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/imgReady.js\"></");
 	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n    <div class=\"wrap\">\r\n        <!--Header-->\r\n        ");
@@ -165,9 +168,11 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n        <!--/Header-->\r\n        <!--content begin-->\r\n        <div class=\"content\">\r\n            <div class=\"left infor_left news_bj\">\r\n                <!--新闻左侧导航-->\r\n		        ");
 
-	templateBuilder.Append("<div class=\"infor_leftlist news_left\">\r\n    <h3>新闻专区");
-	templateBuilder.Append(Utils.ObjectToStr(channel));
-	templateBuilder.Append("<br /><em>NEWS</em></h3>\r\n    <ul class=\"navbar\">\r\n    ");
+	templateBuilder.Append("<div class=\"infor_leftlist news_left\">\r\n    <h3>");
+	templateBuilder.Append(Utils.ObjectToStr(get_channel(channel).title));
+	templateBuilder.Append("<br /><em>");
+	templateBuilder.Append(Utils.ObjectToStr(channel.ToUpper()));
+	templateBuilder.Append("</em></h3>\r\n    <ul class=\"navbar\">\r\n    ");
 	DataTable categoryList1 = get_category_child_list(channel, 0);
 
 	foreach(DataRow cdr1 in categoryList1.Rows)
@@ -185,7 +190,7 @@ override protected void OnInit(EventArgs e)
 	}	//end for if
 
 	templateBuilder.Append("\r\n	        <h4><a href=\"");
-	templateBuilder.Append(linkurl("news_list",Utils.ObjectToStr(cdr1["id"])));
+	templateBuilder.Append(linkurl(channel+"_list",Utils.ObjectToStr(cdr1["id"])));
 
 	templateBuilder.Append("\">" + Utils.ObjectToStr(cdr1["title"]) + "</a></h4>\r\n	        <p>\r\n        ");
 	DataTable categoryList2 = get_category_child_list(channel, Utils.StrToInt(Utils.ObjectToStr(cdr1["id"]), 0));
@@ -197,7 +202,7 @@ override protected void OnInit(EventArgs e)
 	{
 
 	templateBuilder.Append("\r\n        	<a href=\"");
-	templateBuilder.Append(linkurl("news_list",Utils.ObjectToStr(cdr2["id"])));
+	templateBuilder.Append(linkurl(channel+"_list",Utils.ObjectToStr(cdr2["id"])));
 
 	templateBuilder.Append("\" class=\"selected\">" + Utils.ObjectToStr(cdr2["title"]) + "</a>\r\n        ");
 	}
@@ -205,7 +210,7 @@ override protected void OnInit(EventArgs e)
 	{
 
 	templateBuilder.Append("\r\n        	<a href=\"");
-	templateBuilder.Append(linkurl("news_list",Utils.ObjectToStr(cdr2["id"])));
+	templateBuilder.Append(linkurl(channel+"_list",Utils.ObjectToStr(cdr2["id"])));
 
 	templateBuilder.Append("\">" + Utils.ObjectToStr(cdr2["title"]) + "</a>\r\n        ");
 	}	//end for if
@@ -218,14 +223,58 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\r\n    </ul>\r\n</div>");
 
 
-	templateBuilder.Append("\r\n		        <!--/新闻左侧导航-->\r\n                <div class=\"hospital_link\"></div>\r\n            </div>\r\n             <div class=\"center news_center\">\r\n      <div class=\"site_nav news_nav\">首页 > 就诊指南 > 住院指南</div>\r\n      <div class=\"news_mx news_mx2\">\r\n        <h3 id=\"H3Title\">");
+	templateBuilder.Append("\r\n		        <!--/新闻左侧导航-->\r\n                <div class=\"hospital_link\"></div>\r\n            </div>\r\n             <div class=\"center news_center\">\r\n      <div class=\"site_nav news_nav\">首页 > ");
+	templateBuilder.Append(Utils.ObjectToStr(category_title));
+	templateBuilder.Append(" </div>\r\n      <div class=\"news_mx news_mx2\">\r\n        <h3 id=\"H3Title\">");
 	templateBuilder.Append(Utils.ObjectToStr(model.title));
-	templateBuilder.Append("</h3>\r\n      </div>\r\n      <div class=\"news_control\">\r\n        <span id=\"span_Date\" class=\"sty01\">发布日期:2012/12/18</span>\r\n               <span id=\"SpanHitNum\" class=\"sty02\">浏览量:14999</span>\r\n        <div class=\"DragBody\"><div class=\"FontSizeChange\">字号调整：</div><div id=\"dragContainer\"><div id=\"dragDiv\"></div></div></div>       \r\n        <div id=\"bdshare\" class=\"bdshare_b\" style=\"line-height: 12px;\"><img src=\"images/btn_news01.jpg\" width=\"40\" height=\"40\" alt=\"分享\" title=\"分享\" /><a class=\"shareCount\"></a></div>\r\n        <script type=\"text/javascript\" id=\"bdshare_js\" data=\"type=button&amp;uid=6713615\" ></");
-	templateBuilder.Append("script><script type=\"text/javascript\" id=\"bdshell_js\"></");
-	templateBuilder.Append("script><script type=\"text/javascript\">document.getElementById(\"bdshell_js\").src = \"http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=\" + Math.ceil(new Date() / 3600000);</");
-	templateBuilder.Append("script>\r\n      </div>\r\n      <div class=\"news_mx\">\r\n        <div id=\"ul_Content\"> \r\n        ");
+	templateBuilder.Append("</h3>\r\n      </div>\r\n      <div class=\"news_control\">\r\n        <span id=\"span_Date\" class=\"sty01\">发布日期:");
+	templateBuilder.Append(Utils.ObjectToStr(model.add_time));
+	templateBuilder.Append("</span>\r\n               <span id=\"SpanHitNum\" class=\"sty02\">浏览量:\r\n               	<script type=\"text/javascript\" src=\"");
+	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
+	templateBuilder.Append("tools/submit_ajax.ashx?action=view_article_click&id=");
+	templateBuilder.Append(Utils.ObjectToStr(model.id));
+	templateBuilder.Append("&click=1\"></");
+	templateBuilder.Append("script>\r\n               </span>\r\n        <div class=\"DragBody\"><div class=\"FontSizeChange\">字号调整：</div>\r\n        <div id=\"dragContainer\">\r\n        	<div id=\"dragDiv\"></div></div></div>       \r\n        <div id=\"bdshare\" class=\"bdshare_b\" style=\"line-height: 12px;\">\r\n        	<img src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/images/btn_news01.jpg\" width=\"40\" height=\"40\" alt=\"分享\" title=\"分享\" /><a class=\"shareCount\"></a></div>\r\n      </div>\r\n      <div class=\"news_mx\">\r\n        <div id=\"ul_Content\"> \r\n        ");
 	templateBuilder.Append(Utils.ObjectToStr(model.content));
-	templateBuilder.Append("\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"right news_right n_mx\">\r\n      <h5><img src=\"images/pic_024.jpg\" width=\"168\" height=\"71\" alt=\"图片描述\" title=\"图片描述\" /></h5>\r\n      <div class=\"right_newsmx\">\r\n        <h6>阅读推荐</h6>\r\n        <ul>\r\n            \r\n                 <li><a href=\"Notice_detail.aspx?id=7168\">河南省医师协会泌尿外科医师分会成立大会暨第二届河南省泌尿微创新技术研讨会的通知</a><br /><em>2015-08-19</em>浏览：6</li>\r\n              \r\n                \r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <!--content end-->\r\n        <div class=\"clear\"></div> \r\n        <!--Footer-->\r\n        ");
+	templateBuilder.Append("\r\n        </div>\r\n         <!--分享-->\r\n    	");
+
+	templateBuilder.Append("  <!-- JiaThis Button BEGIN --> \r\n  <div id=\"ckepop\">\r\n      <span class=\"jiathis_txt\">分享到：</span>\r\n      <a class=\"jiathis_button_tqq\">腾讯</a>\r\n      <a class=\"jiathis_button_tsina\">新浪</a>\r\n      <a class=\"jiathis_button_renren\">人人网</a>\r\n      <a class=\"jiathis_button_email\">邮件</a>\r\n      <a class=\"jiathis_button_fav\">收藏夹</a>\r\n      <a class=\"jiathis_button_copy\">复制网址</a> \r\n      <a href=\"http://www.jiathis.com/share/?uid=90225\" class=\"jiathis jiathis_txt jiathis_separator jtico jtico_jiathis\" target=\"_blank\">更多</a> \r\n      <a class=\"jiathis_counter_style\"></a> \r\n  </div> \r\n  <!-- JiaThis Button END -->\r\n  <script type=\"text/javascript\">var jiathis_config={data_track_clickback:true};</");
+	templateBuilder.Append("script> \r\n  <script type=\"text/javascript\" src=\"http://v2.jiathis.com/code/jia.js?uid=1336353133859589\" charset=\"utf-8\"></");
+	templateBuilder.Append("script>");
+
+
+	templateBuilder.Append("\r\n    	<!--/分享-->\r\n    <!--上下篇-->\r\n    <div class=\"corlnum\">\r\n            <ul>\r\n                <li>");
+	templateBuilder.Append(get_prevandnext_article("news_show", -1, "[已经是第一篇]", 0).ToString());
+
+	templateBuilder.Append("<span>上一篇</span></li>\r\n                <li>");
+	templateBuilder.Append(get_prevandnext_article("news_show", 1, "[已经是最后一篇]", 0).ToString());
+
+	templateBuilder.Append("<span>下一篇</span></li>\r\n            </ul>\r\n    </div>\r\n    <!--/上下篇-->\r\n      </div>\r\n    </div>\r\n    <div class=\"right news_right n_mx\">\r\n      <h5><img src=\"");
+	templateBuilder.Append("/templates/main");
+	templateBuilder.Append("/images/pic_024.jpg\" width=\"168\" height=\"71\" alt=\"图片描述\" title=\"图片描述\" /></h5>\r\n       <!--相关推荐-->\r\n      <div class=\"right_newsmx\">\r\n        <h6>相关推荐</h6>\r\n        <ul>\r\n        ");
+	DataTable relNews = get_article_list(channel, model.category_id, 4, "is_red=1 and img_url<>'' and id<>"+model.id);
+
+	foreach(DataRow dr in relNews.Rows)
+	{
+
+	templateBuilder.Append("\r\n        <li>\r\n          <div class=\"img-box\">\r\n            <a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
+
+	templateBuilder.Append("\">\r\n              <img src=\"" + Utils.ObjectToStr(dr["img_url"]) + "\" />\r\n            </a>\r\n          </div>\r\n          <div class=\"info\">\r\n            <h3><a title=\"" + Utils.ObjectToStr(dr["title"]) + "\" href=\"");
+	templateBuilder.Append(linkurl("news_show",Utils.ObjectToStr(dr["id"])));
+
+	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a></h3>\r\n            <p>" + Utils.ObjectToStr(dr["zhaiyao"]) + "</p>\r\n            <span>" + Utils.ObjectToStr(dr["add_time"]) + "</span>\r\n          </div>\r\n        </li>\r\n        ");
+	}	//end for if
+
+	if (relNews.Rows.Count<1)
+	{
+
+	templateBuilder.Append("\r\n        <div class=\"nodata\">暂无相关的资讯...</div>\r\n        ");
+	}	//end for if
+
+	templateBuilder.Append("\r\n      </ul>\r\n      </div>\r\n    </div>\r\n  	</div> <!--/相关推荐-->\r\n\r\n  <!--content end-->\r\n        <div class=\"clear\"></div> \r\n        <!--Footer-->\r\n        ");
 
 	templateBuilder.Append("<!--<div class=\"footer clearfix\">\r\n  <div class=\"foot-nav\">\r\n    <a target=\"_blank\" href=\"");
 	templateBuilder.Append(linkurl("index"));
@@ -280,9 +329,12 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n        <!--/Footer-->\r\n        <!--quick nav start-->\r\n        ");
 
-	templateBuilder.Append("<!--quick nav start-->\r\n\r\n<div class=\"QuickNav\">\r\n    <div class=\"quick_nav1\"><img src=\"");
+	templateBuilder.Append("<!--quick nav start-->\r\n<div class=\"QuickNav\">\r\n    <div class=\"quick_nav1\"><img src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/pic_qnav01.jpg\" width=\"95\" height=\"48\" alt=\"快速导航\" title=\"快速导航\" /></div>\r\n    <div class=\"quick_nav2\">\r\n        <ul>\r\n            <li><a href=\"Treatment.aspx\"><img src=\"");
+	templateBuilder.Append("/images/pic_qnav01.jpg\" width=\"95\" height=\"48\" alt=\"快速导航\" title=\"快速导航\" /></div>\r\n    <div class=\"quick_nav2\">\r\n        <ul>\r\n            <li><a href=\"");
+	templateBuilder.Append(linkurl("treatment_list",64));
+
+	templateBuilder.Append("\"><img src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav001b.png\" width=\"54\" height=\"54\" alt=\"就诊指南\" title=\"就诊指南\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
@@ -306,7 +358,7 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/images/ico_nav005b.png\" width=\"54\" height=\"54\" alt=\"预约挂号\" title=\"预约挂号\" /><img class=\"NavNone\" src=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/images/ico_nav005.png\" width=\"54\" height=\"54\" alt=\"预约挂号\" title=\"预约挂号\" /><p>预约挂号</p></a></li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n\r\n<!--quick nav end-->");
+	templateBuilder.Append("/images/ico_nav005.png\" width=\"54\" height=\"54\" alt=\"预约挂号\" title=\"预约挂号\" /><p>预约挂号</p></a></li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<!--quick nav end-->");
 
 
 	templateBuilder.Append("\r\n        <!--quick nav end-->\r\n    </div></body>\r\n</html>");

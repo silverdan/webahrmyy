@@ -54,6 +54,9 @@
     <Compile Include="Label\article.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Label\channel.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Label\comment.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

@@ -42,6 +42,15 @@ namespace DTcms.BLL
             return dal.GetSalt(user_name);
         }
 
+        public string GetRealName(string user_name)
+        {
+              Model.manager m =  dal.GetModelByUserName(user_name);
+              if (m != null)
+                  return m.real_name;
+              else
+                  return "未知或锁定用户";
+        }
+
         /// <summary>
         /// 增加一条数据
         /// </summary>
@@ -119,5 +128,7 @@ namespace DTcms.BLL
         }
 
         #endregion
+
+
     }
 }

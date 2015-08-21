@@ -293,6 +293,28 @@ namespace DTcms.DAL
             return DbHelperSQL.Query(PagingHelper.CreatePagingSql(recordCount, pageSize, pageIndex, strSql.ToString(), filedOrder));
         }
 
+
         #endregion
+
+        /// <summary>
+        /// 根据用户名返回一个实体
+        /// </summary>
+        public Model.manager GetModelByUserName(string user_name)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("select id from " + databaseprefix + "manager");
+            strSql.Append(" where user_name=@user_name and is_lock=0");
+            SqlParameter[] parameters = {
+					new SqlParameter("@user_name", SqlDbType.NVarChar,100),
+                    new SqlParameter("@password", SqlDbType.NVarChar,100)};
+            parameters[0].Value = user_name;
+            
+            object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
+            if (obj != null)
+            {
+                return GetModel(Convert.ToInt32(obj));
+            }
+            return null;
+        }
     }
 }

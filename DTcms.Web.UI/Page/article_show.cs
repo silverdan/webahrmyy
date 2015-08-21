@@ -12,7 +12,7 @@ namespace DTcms.Web.UI.Page
         protected int id;
         protected string page = string.Empty;
         protected Model.article model = new Model.article();
-        
+        protected string real_name = string.Empty;
         /// <summary>
         /// 重写虚方法,此方法将在Init事件前执行
         /// </summary>
@@ -44,6 +44,7 @@ namespace DTcms.Web.UI.Page
             {
                 return;
             }
+            real_name = new BLL.manager().GetRealName(model.user_name);
             //跳转URL
             if (model.link_url != null)
             {

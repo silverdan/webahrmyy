@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/21 16:14:34.
-		本页面代码由DTcms模板引擎生成于 2015/8/21 16:14:34. 
+		This page was created by DTcms Template Engine at 2015-08-23 1:17:40.
+		本页面代码由DTcms模板引擎生成于 2015-08-23 1:17:40. 
 	*/
 
 	base.OnInit(e);
@@ -18,35 +18,55 @@ override protected void OnInit(EventArgs e)
 	const string channel = "survey";
 	const int pagesize = 10;
 
-	templateBuilder.Append("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n<title>");
+	templateBuilder.Append("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">
+<html xmlns=\"http://www.w3.org/1999/xhtml\">
+<head>
+<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
+<title>");
 	templateBuilder.Append(Utils.ObjectToStr(model.title));
 	templateBuilder.Append(" - ");
 	templateBuilder.Append(Utils.ObjectToStr(site.name));
-	templateBuilder.Append("</title>\r\n<meta name=\"keywords\" content=\"");
+	templateBuilder.Append("</title>
+<meta name=\"keywords\" content=\"");
 	templateBuilder.Append(Utils.ObjectToStr(model.seo_keywords));
-	templateBuilder.Append("\" />\r\n<meta name=\"description\" content=\"");
+	templateBuilder.Append("\" />
+<meta name=\"description\" content=\"");
 	templateBuilder.Append(Utils.ObjectToStr(model.seo_description));
-	templateBuilder.Append("\" />\r\n<link href=\"");
+	templateBuilder.Append("\" />
+<link href=\"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
-	templateBuilder.Append("css/pagination.css\" rel=\"stylesheet\" />\r\n    <link href=\"");
+	templateBuilder.Append("css/pagination.css\" rel=\"stylesheet\" />
+    <link href=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/css/common.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n    <link href=\"");
+	templateBuilder.Append("/css/common.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link href=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/css/second.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n    <link href=\"");
+	templateBuilder.Append("/css/second.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link href=\"");
 	templateBuilder.Append("/templates/main");
-	templateBuilder.Append("/css/base.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("/css/base.css\" rel=\"stylesheet\" type=\"text/css\" />
+<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append(Utils.ObjectToStr(config.webpath));
 	templateBuilder.Append("scripts/jquery/jquery-1.11.2.min.js\"></");
-	templateBuilder.Append("script>\r\n<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("script>
+<script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/common.js\"></");
-	templateBuilder.Append("script>\r\n    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("script>
+    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/jquery-1.7.2.min.js\"></");
-	templateBuilder.Append("script>\r\n    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
+	templateBuilder.Append("script>
+    <script type=\"text/javascript\" charset=\"utf-8\" src=\"");
 	templateBuilder.Append("/templates/main");
 	templateBuilder.Append("/js/imgReady.js\"></");
-	templateBuilder.Append("script>\r\n</head>\r\n\r\n<body>\r\n    <div class=\"wrap\">\r\n        <!--Header-->\r\n        ");
+	templateBuilder.Append("script>
+</head>
+
+<body>
+    <div class=\"wrap\">
+        <!--Header-->
+        ");
 
 	templateBuilder.Append("<!--<div class=\"header\">\r\n  <div class=\"header-wrap\">\r\n    <div class=\"section\">\r\n      <div class=\"left-box\">\r\n        <a class=\"logo\" href=\"");
 	templateBuilder.Append(linkurl("index"));
@@ -157,69 +177,58 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("\">专题</a></li>\r\n    </ul>\r\n</div>");
 
 
-	templateBuilder.Append("\r\n        <!--/Header-->\r\n        <!--content begin-->\r\n        <div class=\"content survey_cont\">\r\n            <!--left-->\r\n            ");
-
-	templateBuilder.Append("<div class=\"left\">\r\n                <div class=\"survey_left\">\r\n                    <ul>      \r\n                        ");
-	DataTable categoryList1 = get_category_child_list(channel, 0);
-
-	foreach(DataRow cdr1 in categoryList1.Rows)
-	{
-
-	if (Utils.StrToInt(Utils.ObjectToStr(cdr1["id"]), 0)==category_id)
-	{
-
-	templateBuilder.Append("\r\n                        <li class=\"on\">\r\n                        ");
-	}
-	else
-	{
-
-	templateBuilder.Append("\r\n                        <li> \r\n                        ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n                            <span>" + Utils.ObjectToStr(cdr1["content"]) + "</span>\r\n                            ");
-	if (Utils.ObjectToStr(cdr1["link_url"])=="")
-	{
-
-	templateBuilder.Append("\r\n                            <a href=\"");
-	templateBuilder.Append(linkurl("survey",Utils.ObjectToStr(cdr1["id"])));
-
-	templateBuilder.Append("\">\r\n                            ");
-	}
-	else
-	{
-
-	templateBuilder.Append("\r\n                            <!--\r\n                            	\r\n                            	作者：dan0627@gmail.com\r\n                            	时间：2015-08-19\r\n                            	描述： 本栏目内容页只需存储id使用<a href=\"");
-	templateBuilder.Append(linkurl("survey_show",Utils.ObjectToStr(cdr1["link_url"])));
-
-	templateBuilder.Append("\"> 否则存储完整URL:<a href=\"" + Utils.ObjectToStr(cdr1["link_url"]) + "\">\r\n                            -->\r\n                             <a href=\"");
-	templateBuilder.Append(linkurl("survey_show",Utils.ObjectToStr(cdr1["link_url"])));
-
-	templateBuilder.Append("\">\r\n                            ");
-	}	//end for if
-
-	templateBuilder.Append("	\r\n                            	" + Utils.ObjectToStr(cdr1["title"]) + "</a>\r\n                        </li>\r\n                        ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n                    </ul>\r\n                </div>\r\n     <div class=\"hospital_link link_sur\"></div>\r\n</div>");
+	templateBuilder.Append("
+        <!--/Header-->
+        <!--content begin-->
+        <div class=\"content survey_cont\">
+            <!--left-->
+            ");
 
 
-	templateBuilder.Append("\r\n            <!--/left-->\r\n            <div class=\"right survey_right\">\r\n                <div class=\"survey_main sur_wh\">\r\n                    <h3 id=\"h3_dateTitle\"><span></span>");
+
+	templateBuilder.Append("
+            <!--/left-->
+            <div class=\"right survey_right\">
+                <div class=\"survey_main sur_wh\">
+                    <h3 id=\"h3_dateTitle\"><span></span>");
 	templateBuilder.Append(Utils.ObjectToStr(model.title));
-	templateBuilder.Append("</h3>\r\n                    <span id=\"span_Content\"></span>\r\n                    <ul><!--此处为16条新闻列表-->\r\n            			");
+	templateBuilder.Append("</h3>
+                    <span id=\"span_Content\"></span>
+                    <ul><!--此处为16条新闻列表-->
+            			");
 	DataTable newsList = get_article_list(channel, category_id, pagesize, page, "status=0", out totalcount, out pagelist, "news_list", category_id, "__id__");
 
 	foreach(DataRow dr in newsList.Rows)
 	{
 
-	templateBuilder.Append("\r\n                		<li><em>" + Utils.ObjectToStr(dr["add_time"]) + "</em>\r\n                  		<a href=\"");
+	templateBuilder.Append("
+                		<li><em>" + Utils.ObjectToStr(dr["add_time"]) + "</em>
+                  		<a href=\"");
 	templateBuilder.Append(linkurl("survey_show",Utils.ObjectToStr(dr["id"])));
 
-	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a>\r\n                		</li>\r\n                		");
+	templateBuilder.Append("\">" + Utils.ObjectToStr(dr["title"]) + "</a>
+                		</li>
+                		");
 	}	//end for if
 
-	templateBuilder.Append("\r\n        			</ul>\r\n                </div>\r\n                <div class=\"page_mob02\">\r\n                    <!--页码列表-->\r\n                    <div id=\"anpNews\">\r\n                        <div class=\"digg\">");
+	templateBuilder.Append("
+        			</ul>
+                </div>
+                <div class=\"page_mob02\">
+                    <!--页码列表-->
+                    <div id=\"anpNews\">
+                        <div class=\"digg\">");
 	templateBuilder.Append(Utils.ObjectToStr(pagelist));
-	templateBuilder.Append("</div>\r\n                    </div> \r\n                    <!--/页码列表-->\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!--content end-->\r\n        <div class=\"clear\"></div>\r\n        <!--Footer-->\r\n        ");
+	templateBuilder.Append("</div>
+                    </div> 
+                    <!--/页码列表-->
+                </div>
+            </div>
+        </div>
+        <!--content end-->
+        <div class=\"clear\"></div>
+        <!--Footer-->
+        ");
 
 	templateBuilder.Append("<!--<div class=\"footer clearfix\">\r\n  <div class=\"foot-nav\">\r\n    <a target=\"_blank\" href=\"");
 	templateBuilder.Append(linkurl("index"));
@@ -272,7 +281,10 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("script>\r\n</div>\r\n<!--footer end-->\r\n<div class=\"page_tr\"></div>");
 
 
-	templateBuilder.Append("\r\n        <!--/Footer-->\r\n        <!--quick nav start-->\r\n        ");
+	templateBuilder.Append("
+        <!--/Footer-->
+        <!--quick nav start-->
+        ");
 
 	templateBuilder.Append("<!--quick nav start-->\r\n<div class=\"QuickNav\">\r\n    <div class=\"quick_nav1\"><img src=\"");
 	templateBuilder.Append("/templates/main");
@@ -306,7 +318,10 @@ override protected void OnInit(EventArgs e)
 	templateBuilder.Append("/images/ico_nav005.png\" width=\"54\" height=\"54\" alt=\"预约挂号\" title=\"预约挂号\" /><p>预约挂号</p></a></li>\r\n        </ul>\r\n    </div>\r\n</div>\r\n<!--quick nav end-->");
 
 
-	templateBuilder.Append("\r\n        <!--quick nav end-->\r\n    </div></body>\r\n</html>");
+	templateBuilder.Append("
+        <!--quick nav end-->
+    </div></body>
+</html>");
 	Response.Write(templateBuilder.ToString());
 }
 </script>

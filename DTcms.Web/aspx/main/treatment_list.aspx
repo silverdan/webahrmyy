@@ -9,8 +9,8 @@ override protected void OnInit(EventArgs e)
 {
 
 	/* 
-		This page was created by DTcms Template Engine at 2015/8/21 16:14:34.
-		本页面代码由DTcms模板引擎生成于 2015/8/21 16:14:34. 
+		This page was created by DTcms Template Engine at 2015-08-23 1:17:40.
+		本页面代码由DTcms模板引擎生成于 2015-08-23 1:17:40. 
 	*/
 
 	base.OnInit(e);
@@ -159,59 +159,6 @@ override protected void OnInit(EventArgs e)
 
 	templateBuilder.Append("\r\n        <!--/Header-->\r\n        <!--content begin-->\r\n        <div class=\"content\">\r\n            <div class=\"left infor_left news_bj\">\r\n                <div class=\"infor_leftlist news_left\">\r\n				<!--新闻左侧导航-->\r\n		        ");
 
-	templateBuilder.Append("<div class=\"infor_leftlist news_left\">\r\n    <h3>");
-	templateBuilder.Append(Utils.ObjectToStr(get_channel(channel).title));
-	templateBuilder.Append("<br /><em>");
-	templateBuilder.Append(Utils.ObjectToStr(channel.ToUpper()));
-	templateBuilder.Append("</em></h3>\r\n    <ul class=\"navbar\">\r\n    ");
-	DataTable categoryList1 = get_category_child_list(channel, 0);
-
-	foreach(DataRow cdr1 in categoryList1.Rows)
-	{
-
-	if (Utils.StrToInt(Utils.ObjectToStr(cdr1["id"]), 0)==category_id)
-	{
-
-	templateBuilder.Append("\r\n        <li class=\"on\">\r\n        ");
-	}
-	else
-	{
-
-	templateBuilder.Append("\r\n        <li> \r\n        ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n	        <h4><a href=\"");
-	templateBuilder.Append(linkurl(channel+"_list",Utils.ObjectToStr(cdr1["id"])));
-
-	templateBuilder.Append("\">" + Utils.ObjectToStr(cdr1["title"]) + "</a></h4>\r\n	        <p>\r\n        ");
-	DataTable categoryList2 = get_category_child_list(channel, Utils.StrToInt(Utils.ObjectToStr(cdr1["id"]), 0));
-
-	foreach(DataRow cdr2 in categoryList2.Rows)
-	{
-
-	if (Utils.StrToInt(Utils.ObjectToStr(cdr2["id"]), 0)==category_id)
-	{
-
-	templateBuilder.Append("\r\n        	<a href=\"");
-	templateBuilder.Append(linkurl(channel+"_list",Utils.ObjectToStr(cdr2["id"])));
-
-	templateBuilder.Append("\" class=\"selected\">" + Utils.ObjectToStr(cdr2["title"]) + "</a>\r\n        ");
-	}
-	else
-	{
-
-	templateBuilder.Append("\r\n        	<a href=\"");
-	templateBuilder.Append(linkurl(channel+"_list",Utils.ObjectToStr(cdr2["id"])));
-
-	templateBuilder.Append("\">" + Utils.ObjectToStr(cdr2["title"]) + "</a>\r\n        ");
-	}	//end for if
-
-	}	//end for if
-
-	templateBuilder.Append("\r\n        </p>\r\n        </li>\r\n    ");
-	}	//end for if
-
-	templateBuilder.Append("\r\n    </ul>\r\n</div>");
 
 
 	templateBuilder.Append("\r\n		        <!--/新闻左侧导航-->\r\n                </div>\r\n                <div class=\"hospital_link\"></div>\r\n            </div>\r\n            <div class=\"center news_center\">\r\n                <div class=\"site_nav news_nav\">首页 > ");
